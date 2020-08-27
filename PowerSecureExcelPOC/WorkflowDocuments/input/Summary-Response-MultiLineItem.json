@@ -1,0 +1,264 @@
+{
+	"Items": [
+		{
+			"moduleInputs": [
+				{
+					"variableName": "computedallianceFeePercentage",
+					"inputValue": ""
+				},
+				{
+					"variableName": "computedContingencyAmount",
+					"inputValue": ""
+				},
+				{
+					"variableName": "computedallianceFeeAmount",
+					"inputValue": 0.0
+				},
+				{
+					"variableName": "computedContingencyPercentage",
+					"inputValue": ""
+				},
+				{
+					"variableName": "contingencyAmount",
+					"inputValue": ""
+				},
+				{
+					"variableName": "allianceFeeAmount",
+					"inputValue": ""
+				},
+				{
+					"variableName": "contingencyPercentage",
+					"inputValue": ""
+				},
+				{
+					"variableName": "allianceFeePercentage",
+					"inputValue": ""
+				},
+				{
+					"variableName": "estimatedSalesTax",
+					"inputValue": false
+				},
+				{
+					"variableName": "salesPriceOverride",
+					"inputValue": ""
+				},
+				{
+					"variableName": "totalSalesPrice",
+					"inputValue": 449467.2896820513
+				},
+				{
+					"variableName": "totalRevenue",
+					"inputValue": 449467.2896820513
+				},
+				{
+					"variableName": "warranty",
+					"inputValue": 0.0
+				},
+				{
+					"variableName": "totalCost",
+					"inputValue": 351491.32
+				},
+				{
+					"variableName": "grossProfit",
+					"inputValue": 97975.97
+				},
+				{
+					"variableName": "grossMargin",
+					"inputValue": 21.8
+				},
+				{
+					"variableName": "sgaBurdenRate",
+					"inputValue": 8.0
+				},
+				{
+					"variableName": "operatingIncome",
+					"inputValue": 62018.586825435894
+				},
+				{
+					"variableName": "operatingMargin",
+					"inputValue": 13.798242552713287
+				},
+				{
+					"variableName": "corporateTaxRate",
+					"inputValue": 25.0
+				},
+				{
+					"variableName": "netIncome",
+					"inputValue": 46513.95
+				},
+				{
+					"variableName": "netMargin",
+					"inputValue": 10.34
+				},
+				{
+					"variableName": "totalMaterials",
+					"inputValue": 278141.4173074857
+				},
+				{
+					"variableName": "kilowattSB",
+					"inputValue": 1300.0
+				},
+				{
+					"variableName": "revenuePerkilowattSB",
+					"inputValue": 345.74
+				},
+				{
+					"variableName": "totalLabor",
+					"inputValue": 171325.87237456558
+				},
+				{
+					"variableName": "kilowattLTP",
+					"inputValue": 1170.0
+				},
+				{
+					"variableName": "revenuePerkilowattLTP",
+					"inputValue": 384.16
+				},
+				{
+					"variableName": "totalHours",
+					"inputValue": 1438.25
+				},
+				{
+					"variableName": "nexgear",
+					"inputValue": 210.0
+				},
+				{
+					"variableName": "powerfab",
+					"inputValue": 1064.0
+				},
+				{
+					"variableName": "qc",
+					"inputValue": 24.0
+				},
+				{
+					"variableName": "test",
+					"inputValue": 24.0
+				},
+				{
+					"variableName": "packaging",
+					"inputValue": 24.0
+				},
+				{
+					"variableName": "install",
+					"inputValue": 82.25
+				},
+				{
+					"variableName": "engineering",
+					"inputValue": 10.0
+				},
+				{
+					"variableName": "pm",
+					"inputValue": 0.0
+				}
+			],
+			"moduleTitle": "Summary",
+			"summaryTable": [
+				{
+					"variableName": "equipment",
+					"tableItems": [
+						{
+							"item": "PowerBlock",
+							"description": "T2 PowerBlock, 1300 kW, Standard, 48-hr FT, WP2, SA III, 1-Stairs(s), 1-Platform(s) (1)",
+							"cost": 200761.47672,
+							"raw": 26366.0,
+							"burden": 86104.24,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 14394.6,
+							"itemcost": 327626.32,
+							"itemprice": 412751.905066667
+						},
+						{
+							"item": "SWITCHGEAR / ATS /APS",
+							"description": "2000A 2-SECTION, NEMA 3R",
+							"cost": 150000.47672,
+							"raw": 30000.25,
+							"burden": 50000.24,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 8556.6,
+							"itemcost": 43649.51,
+							"itemprice": 80391.56
+						}
+					]
+				},
+				{
+					"variableName": "assembly",
+					"tableItems": [
+						{
+							"item": "PowerBlock",
+							"description": "Onsite Control Wiring, Onsite Install, Grounding, Pads, Rigging, Onsite Assembly",
+							"cost": 16750.0,
+							"dpe": 3474.576271186441,
+							"burden": 3640.423728813559,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 23865.0,
+							"itemprice": 36715.3846153846
+						}
+					]
+				},
+				{
+					"variableName": "other",
+					"tableItems": [
+						{
+							"item": "Flux Capacitor",
+							"description": "Generates the 1.21 GigaWatts of power to get to 88 Mph",
+							"cost": 10000000.0,
+							"dpe": 2500.57,
+							"burden": 3600.42,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 100000.0,
+							"itemprice": 2000000.384
+						}
+					]
+				},
+				{
+					"variableName": "equipmentHours",
+					"tableItems": [
+						{
+							"item": "PowerBlock",
+							"nexgear": 210.0,
+							"powerfab": 1064.0,
+							"qc": 24.0,
+							"test": 24.0,
+							"packaging": 24.0,
+							"install": 0.0,
+							"engineering": 10.0,
+							"pm": 0.0
+						}
+					]
+				},
+				{
+					"variableName": "installationHours",
+					"tableItems": [
+						{
+							"item": "PowerBlock",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 82.25,
+							"engineering": 0.0,
+							"pm": 0.0
+						}
+					]
+				},
+				{
+					"variableName": "laborHours",
+					"tableItems": []
+				},
+				{
+					"variableName": "warrantyHours",
+					"tableItems": []
+				}
+			],
+			"estimateId": "8ce77764-d0fa-4a7c-b20d-5647503aad4b",
+			"boLiId": "BO12xyz"
+		}
+	]
+} 
