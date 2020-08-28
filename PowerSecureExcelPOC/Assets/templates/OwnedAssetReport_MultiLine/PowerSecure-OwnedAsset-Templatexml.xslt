@@ -60,43 +60,84 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
     <xsl:variable name="currentRowCount" select="8"/>
     <xsl:variable name="equipmentCount" select="count(Items/summaryTable[variableName='equipment']/tableItems)"/>
     <xsl:for-each select="key('summary', 'equipment')">
-      <!--<xsl:if test = "variableName = 'equipment'">-->
-        <xsl:call-template name="AddOwnedAssetTable">
-          <xsl:with-param name = "rowCount" select="$currentRowCount"/>
-          <xsl:with-param name = "headerA" select="6"/>
-          <xsl:with-param name = "headerB" select="7"/>
-          <xsl:with-param name = "headerC" select="8"/>
-          <xsl:with-param name = "headerD" select="9"/>
-        </xsl:call-template>
-      <!--</xsl:if>-->
+      <xsl:call-template name="AddOwnedAssetTable">
+        <xsl:with-param name = "rowCount" select="$currentRowCount"/>
+        <xsl:with-param name = "headerA" select="6"/>
+        <xsl:with-param name = "headerB" select="7"/>
+        <xsl:with-param name = "headerC" select="8"/>
+        <xsl:with-param name = "headerD" select="9"/>
+      </xsl:call-template>
     </xsl:for-each>
     <xsl:variable name="assemblyCount" select="count(Items/summaryTable[variableName='assembly']/tableItems)"/> 
     <xsl:for-each select="key('summary', 'assembly')">
-      <!--<xsl:if test = "variableName = 'assembly'">-->
-        <xsl:call-template name="AddOwnedAssetTable">
-          <!-- Initially adding 2 to count b/c each previously inserted table adds a header and spacer-->
-          <xsl:with-param name = "rowCount" select="2 + $currentRowCount + $equipmentCount"/>
-          <xsl:with-param name = "headerA" select="15"/>
-          <xsl:with-param name = "headerB" select="7"/>
-          <xsl:with-param name = "headerC" select="8"/>
-          <xsl:with-param name = "headerD" select="9"/>
-        </xsl:call-template>
-      <!--</xsl:if>-->
+      <xsl:call-template name="AddOwnedAssetTable">
+        <!-- Initially adding 2 to count b/c each previously inserted table adds a header and spacer-->
+        <xsl:with-param name = "rowCount" select="2 + $currentRowCount + $equipmentCount"/>
+        <xsl:with-param name = "headerA" select="15"/>
+        <xsl:with-param name = "headerB" select="7"/>
+        <xsl:with-param name = "headerC" select="8"/>
+        <xsl:with-param name = "headerD" select="9"/>
+      </xsl:call-template>
     </xsl:for-each>
+    <!--Add Data from the "Other" Summary table in the JSON file this represents misc estimate items-->>
     <xsl:variable name="otherCount" select="count(Items/summaryTable[variableName='other']/tableItems)"/>
     <xsl:for-each select="key('summary', 'other')">
-      <!--<xsl:if test = "variableName = 'other'">-->
-        
-        <xsl:call-template name="AddOwnedAssetTable">
-          <!-- Initially adding 4 to count b/c each previously inserted table adds a header and spacer-->
-          <xsl:with-param name = "rowCount" select="4 + $currentRowCount + $equipmentCount + $assemblyCount"/>
-          <xsl:with-param name = "headerA" select="21"/>
-          <xsl:with-param name = "headerB" select="7"/>
-          <xsl:with-param name = "headerC" select="8"/>
-          <xsl:with-param name = "headerD" select="9"/>
-        </xsl:call-template>
-      <!--</xsl:if>-->
+      <xsl:call-template name="AddOwnedAssetTable">
+        <!-- Initially adding 4 to count b/c each previously inserted table adds a header and spacer-->
+        <xsl:with-param name = "rowCount" select="4 + $currentRowCount + $equipmentCount + $assemblyCount"/>
+        <xsl:with-param name = "headerA" select="21"/>
+        <xsl:with-param name = "headerB" select="7"/>
+        <xsl:with-param name = "headerC" select="8"/>
+        <xsl:with-param name = "headerD" select="9"/>
+      </xsl:call-template>
     </xsl:for-each>
+    <!--Add table for the PM and Engineering line items-->
+    <xsl:variable name="pmAndEngineeringCount" select="count(Items/summaryTable[variableName='pmAndEngineering']/tableItems)"/>
+    <xsl:for-each select="key('summary', 'pmAndEngineering')">
+      <xsl:call-template name="AddOwnedAssetTable">
+        <!-- Initially adding 6 to count b/c each previously inserted table adds a header and spacer-->
+        <xsl:with-param name = "rowCount" select="6 + $currentRowCount + $equipmentCount + $assemblyCount + $otherCount"/>
+        <xsl:with-param name = "headerA" select="30"/>
+        <xsl:with-param name = "headerB" select="7"/>
+        <xsl:with-param name = "headerC" select="8"/>
+        <xsl:with-param name = "headerD" select="9"/>
+      </xsl:call-template>
+    </xsl:for-each>
+    <!--Add table for the AlliancePartnerFee line items-->
+    <xsl:variable name="allianceCount" select="1"/>
+    <xsl:call-template name="AddOwnedAssetAllianceTable">
+      <!-- Initially adding 8 to count b/c each previously inserted table adds a header and spacer-->
+      <xsl:with-param name = "rowCount" select="8 + $currentRowCount + $equipmentCount + $assemblyCount + $otherCount + $pmAndEngineeringCount"/>
+      <xsl:with-param name = "headerA" select="35"/>
+      <xsl:with-param name = "headerB" select="7"/>
+      <xsl:with-param name = "headerC" select="8"/>
+      <xsl:with-param name = "headerD" select="9"/>
+    </xsl:call-template>
+    <!--Add table for the Warranty line items-->
+    <xsl:variable name="warrantyCount" select="1"/>
+    <xsl:call-template name="AddOwnedAssetWarrantyTable">
+      <!-- Initially adding 10 to count b/c each previously inserted table adds a header and spacer-->
+      <xsl:with-param name = "rowCount" select="10 + $currentRowCount + $equipmentCount + $assemblyCount + $otherCount + $pmAndEngineeringCount + $allianceCount"/>
+      <xsl:with-param name = "headerA" select="36"/>
+      <xsl:with-param name = "headerB" select="7"/>
+      <xsl:with-param name = "headerC" select="8"/>
+      <xsl:with-param name = "headerD" select="9"/>
+    </xsl:call-template>
+    <!--Add table for the Warranty line items-->
+    <xsl:variable name="contingencyCount" select="1"/>
+    <xsl:call-template name="AddOwnedAssetContingencyTable">
+      <!-- Initially adding 10 to count b/c each previously inserted table adds a header and spacer-->
+      <xsl:with-param name = "rowCount" select="12 + $currentRowCount + $equipmentCount + $assemblyCount + $otherCount + $pmAndEngineeringCount + $allianceCount + $warrantyCount"/>
+      <xsl:with-param name = "headerA" select="38"/>
+      <xsl:with-param name = "headerB" select="7"/>
+      <xsl:with-param name = "headerC" select="8"/>
+      <xsl:with-param name = "headerD" select="9"/>
+    </xsl:call-template>
+    <!--Add Grand total cost summary line-->>
+    <xsl:call-template name="AddOwnedAssetSummaryTable">
+      <!-- Initially adding 6 to count b/c each previously inserted table adds a header and spacer-->
+      <xsl:with-param name = "rowCount" select="14 + $currentRowCount + $equipmentCount + $assemblyCount + $otherCount + $pmAndEngineeringCount + $allianceCount + $warrantyCount + $contingencyCount"/>
+    </xsl:call-template>
   </xsl:template>
 
   <xsl:template name="AddOwnedAssetTable" xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3">
@@ -106,43 +147,13 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
     <xsl:param name="headerC" select="'Column C'"/>
     <xsl:param name="headerD" select="'Column D'"/>
     <xsl:variable name="insertIndex" select="$rowCount + 1"/>
-    <row r="{$insertIndex}" spans="1:4">
-      <!-- <xsl:attribute name="r">
-        <xsl:value-of select="$rowCount"/>
-      </xsl:attribute> -->
-      <c r="A{$insertIndex}" s="12" t="s">
-        <!-- <xsl:attribute name="r">
-          <xsl:value-of select="concat('A', $rowCount)"/>
-        </xsl:attribute> -->
-        <v>
-          <xsl:value-of select="$headerA"/>
-        </v>
-      </c>
-      <c r="B{$insertIndex}" s="3" t="s">
-        <!-- <xsl:attribute name="r">
-          <xsl:value-of select="concat('B', $insertIndex)"/>
-        </xsl:attribute> -->
-        <v>
-          <xsl:value-of select="$headerB"/>
-        </v>
-      </c>
-      <c r="C{$insertIndex}" s="3" t="s">
-        <!-- <xsl:attribute name="r">
-          <xsl:value-of select="concat('C', $insertIndex)"/>
-        </xsl:attribute> -->
-        <v>
-          <xsl:value-of select="$headerC"/>
-        </v>
-      </c>
-      <c r="D{$insertIndex}" s="21" t="s">
-        <!-- <xsl:attribute name="r">
-          <xsl:value-of select="concat('D', $insertIndex)"/>
-        </xsl:attribute> -->
-        <v>
-          <xsl:value-of select="$headerD"/>
-        </v>
-      </c>
-    </row>
+    <xsl:call-template name="AddOwnedAssetHeader">
+      <xsl:with-param name = "rowCount" select="$rowCount"/>
+      <xsl:with-param name = "headerA" select="$headerA"/>
+      <xsl:with-param name = "headerB" select="$headerB"/>
+      <xsl:with-param name = "headerC" select="$headerC"/>
+      <xsl:with-param name = "headerD" select="$headerD"/>
+    </xsl:call-template>
     <xsl:for-each select = "tableItems">
       <xsl:call-template name="AddOwnedAssetCostTableItem">
         <xsl:with-param name="rowCount" select="(position()-1) + $insertIndex"/>
@@ -153,23 +164,139 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
     </xsl:call-template>
   </xsl:template>
 
+  <xsl:template name="AddOwnedAssetSummaryTable" xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3">
+    <xsl:param name="rowCount" select="0"/>
+    <xsl:variable name="insertIndex" select="$rowCount + 1"/>
+    <xsl:variable name="sumMaterial" select = "sum(Items/summaryTable/tableItems/cost)+sum(Items/summaryTable/tableItems/materialBurdon)"/>
+    <xsl:variable name="sumRawLabor" select = "sum(Items/summaryTable/tableItems/raw)+sum(Items/summaryTable/tableItems/laborBurdon)"/>
+    <xsl:variable name="sumDpeLabor" select = "sum(Items/summaryTable/tableItems/dpe)+sum(Items/summaryTable/tableItems/laborBurdon) + (Items/moduleInputs[variableName='allianceFeeAmount']/inputValue) + Items/moduleInputs[variableName='contingencyAmount']/inputValue + Items/moduleInputs[variableName='warranty']/inputValue"/>
+    <xsl:variable name="sumTax" select = "sum(Items/summaryTable/tableItems/tax)"/>
+    <xsl:call-template name="AddOwnedAssetSummaryItem">
+      <xsl:with-param name = "rowCount" select="$rowCount"/>
+      <xsl:with-param name = "valueA" select="40"/>
+      <xsl:with-param name = "valueB" select="$sumMaterial"/>
+      <xsl:with-param name = "valueC" select="$sumRawLabor + $sumDpeLabor"/>
+      <xsl:with-param name = "valueD" select="$sumTax"/>
+    </xsl:call-template>
+  </xsl:template>
+
+  <xsl:template name="AddOwnedAssetAllianceTable" xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3">
+    <xsl:param name="rowCount" select="0"/>
+    <xsl:param name="headerA" select="'Column A'"/>
+    <xsl:param name="headerB" select="'Column B'"/>
+    <xsl:param name="headerC" select="'Column C'"/>
+    <xsl:param name="headerD" select="'Column D'"/>
+    <xsl:variable name="insertIndex" select="$rowCount + 1"/>
+    <xsl:call-template name="AddOwnedAssetHeader">
+      <xsl:with-param name = "rowCount" select="$rowCount"/>
+      <xsl:with-param name = "headerA" select="$headerA"/>
+      <xsl:with-param name = "headerB" select="$headerB"/>
+      <xsl:with-param name = "headerC" select="$headerC"/>
+      <xsl:with-param name = "headerD" select="$headerD"/>
+    </xsl:call-template>
+    <xsl:call-template name="AddOwnedAssetLineItem">
+      <xsl:with-param name = "rowCount" select="$insertIndex"/>
+      <xsl:with-param name = "valueA" select="35"/>
+      <xsl:with-param name = "valueB" select="0.0"/>
+      <xsl:with-param name = "valueC" select="Items/moduleInputs[variableName='allianceFeeAmount']/inputValue"/>
+      <xsl:with-param name = "valueD" select="0.0"/>
+    </xsl:call-template>
+    <xsl:call-template name="AddOwnedAssetAdHocSpacer">
+        <xsl:with-param name="rowCount" select="1 + $insertIndex"/>
+    </xsl:call-template>
+  </xsl:template>
+
+  <xsl:template name="AddOwnedAssetWarrantyTable" xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3">
+    <xsl:param name="rowCount" select="0"/>
+    <xsl:param name="headerA" select="'Column A'"/>
+    <xsl:param name="headerB" select="'Column B'"/>
+    <xsl:param name="headerC" select="'Column C'"/>
+    <xsl:param name="headerD" select="'Column D'"/>
+    <xsl:variable name="insertIndex" select="$rowCount + 1"/>
+    <xsl:call-template name="AddOwnedAssetHeader">
+      <xsl:with-param name = "rowCount" select="$rowCount"/>
+      <xsl:with-param name = "headerA" select="$headerA"/>
+      <xsl:with-param name = "headerB" select="$headerB"/>
+      <xsl:with-param name = "headerC" select="$headerC"/>
+      <xsl:with-param name = "headerD" select="$headerD"/>
+    </xsl:call-template>
+    <xsl:call-template name="AddOwnedAssetLineItem">
+      <xsl:with-param name = "rowCount" select="$insertIndex"/>
+      <xsl:with-param name = "valueA" select="37"/>
+      <xsl:with-param name = "valueB" select="0.0"/>
+      <xsl:with-param name = "valueC" select="Items/moduleInputs[variableName='warranty']/inputValue"/>
+      <xsl:with-param name = "valueD" select="0.0"/>
+    </xsl:call-template>
+    <xsl:call-template name="AddOwnedAssetAdHocSpacer">
+        <xsl:with-param name="rowCount" select="1 + $insertIndex"/>
+    </xsl:call-template>
+  </xsl:template>
+
+  <xsl:template name="AddOwnedAssetContingencyTable" xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3">
+    <xsl:param name="rowCount" select="0"/>
+    <xsl:param name="headerA" select="'Column A'"/>
+    <xsl:param name="headerB" select="'Column B'"/>
+    <xsl:param name="headerC" select="'Column C'"/>
+    <xsl:param name="headerD" select="'Column D'"/>
+    <xsl:variable name="insertIndex" select="$rowCount + 1"/>
+    <xsl:call-template name="AddOwnedAssetHeader">
+      <xsl:with-param name = "rowCount" select="$rowCount"/>
+      <xsl:with-param name = "headerA" select="$headerA"/>
+      <xsl:with-param name = "headerB" select="$headerB"/>
+      <xsl:with-param name = "headerC" select="$headerC"/>
+      <xsl:with-param name = "headerD" select="$headerD"/>
+    </xsl:call-template>
+    <xsl:call-template name="AddOwnedAssetLineItem">
+      <xsl:with-param name = "rowCount" select="$insertIndex"/>
+      <xsl:with-param name = "valueA" select="38"/>
+      <xsl:with-param name = "valueB" select="0.0"/>
+      <xsl:with-param name = "valueC" select="Items/moduleInputs[variableName='contingencyAmount']/inputValue"/>
+      <xsl:with-param name = "valueD" select="0.0"/>
+    </xsl:call-template>
+    <xsl:call-template name="AddOwnedAssetAdHocSpacer">
+        <xsl:with-param name="rowCount" select="1 + $insertIndex"/>
+    </xsl:call-template>
+  </xsl:template>
+
+  <xsl:template name="AddOwnedAssetHeader"  xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3">
+    <xsl:param name="rowCount" select="0"/>
+    <xsl:param name="headerA" select="'Column A'"/>
+    <xsl:param name="headerB" select="'Column B'"/>
+    <xsl:param name="headerC" select="'Column C'"/>
+    <xsl:param name="headerD" select="'Column D'"/>
+    <xsl:variable name="insertIndex" select="$rowCount + 1"/>
+    <row r="{$insertIndex}" spans="1:4">
+      <c r="A{$insertIndex}" s="12" t="s">
+        <v>
+          <xsl:value-of select="$headerA"/>
+        </v>
+      </c>
+      <c r="B{$insertIndex}" s="3" t="s">
+        <v>
+          <xsl:value-of select="$headerB"/>
+        </v>
+      </c>
+      <c r="C{$insertIndex}" s="3" t="s">
+        <v>
+          <xsl:value-of select="$headerC"/>
+        </v>
+      </c>
+      <c r="D{$insertIndex}" s="21" t="s">
+        <v>
+          <xsl:value-of select="$headerD"/>
+        </v>
+      </c>
+    </row>
+  </xsl:template>
+
   <xsl:template name="AddOwnedAssetCostTableItem" xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3">
     <xsl:param name="rowCount" select="0"/>
     <xsl:variable name="insertIndex" select="$rowCount + 1"/>
     <row r="{$insertIndex}" spans="1:4">
-      <!-- <xsl:attribute name="r">
-          <xsl:value-of select="$insertIndex"/>
-      </xsl:attribute> -->
       <c r="A{$insertIndex}" s="22">
-        <!-- <xsl:attribute name="r">
-          <xsl:value-of select="concat('A', $insertIndex)"/>
-        </xsl:attribute> -->
         <is><t><xsl:value-of select="item"/></t></is>
       </c>
       <c r="B{$insertIndex}" s="6">
-        <!-- <xsl:attribute name="r">
-          <xsl:value-of select="concat('B', $insertIndex)"/>
-        </xsl:attribute> -->
         <v>
           <xsl:variable name="cost" select="cost"/>
           <xsl:variable name="materialBurdon" select="materialBurdon"/>
@@ -177,9 +304,6 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
         </v>
       </c>
       <c r="C{$insertIndex}" s="6">
-        <!-- <xsl:attribute name="r">
-          <xsl:value-of select="concat('C', $insertIndex)"/>
-        </xsl:attribute> -->
         <v>
           <xsl:variable name="laborBurdon" select="laborBurdon"/>
           <xsl:if test="raw">
@@ -193,11 +317,89 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
         </v>
       </c>
       <c r="D{$insertIndex}" s="23">
-        <!-- <xsl:attribute name="r">
-          <xsl:value-of select="concat('D', $insertIndex)"/>
-        </xsl:attribute> -->
         <v>
           <xsl:value-of select="tax"/>
+        </v>
+      </c>
+    </row>
+  </xsl:template>
+
+  <!-- TODO: Add the capability to parameterize style values and condense AddOwnedAssetSummaryItem, AddOwnedAssetLineItem, and AddOwnedAssetHeader into single template-->
+  <xsl:template name="AddOwnedAssetSummaryItem"  xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3">
+    <xsl:param name="rowCount" select="0"/>
+    <xsl:param name="valueA" select="'Item Text Not Available'"/>
+    <xsl:param name="valueB" select="0"/>
+    <xsl:param name="valueC" select="0"/>
+    <xsl:param name="valueD" select="0"/>
+    <xsl:variable name="insertIndex" select="$rowCount + 1"/>
+    <row r="{$insertIndex}" spans="1:4">
+      <xsl:if test="number($valueA) = 'NaN'">
+        <c r="A{$insertIndex}" s="39" t="inlineStr">
+          <is>
+            <t><xsl:value-of select="@valueA"/></t>
+          </is>
+        </c>
+      </xsl:if>
+      <xsl:if test="number($valueA) != 'NaN'">
+        <c r="A{$insertIndex}" s="39" t="s">
+          <v>
+              <xsl:value-of select="$valueA"/>
+          </v>
+        </c>
+      </xsl:if>
+      <c r="B{$insertIndex}" s="9">
+        <v>
+          <xsl:value-of select="$valueB"/>
+        </v>
+      </c>
+      <c r="C{$insertIndex}" s="10">
+        <v>
+          <xsl:value-of select="$valueC"/>
+        </v>
+      </c>
+      <c r="D{$insertIndex}" s="38">
+        <v>
+          <xsl:value-of select="$valueD"/>
+        </v>
+      </c>
+    </row>
+  </xsl:template>
+
+  <xsl:template name="AddOwnedAssetLineItem"  xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3">
+    <xsl:param name="rowCount" select="0"/>
+    <xsl:param name="valueA" select="'Item Text Not Available'"/>
+    <xsl:param name="valueB" select="0"/>
+    <xsl:param name="valueC" select="0"/>
+    <xsl:param name="valueD" select="0"/>
+    <xsl:variable name="insertIndex" select="$rowCount + 1"/>
+    <row r="{$insertIndex}" spans="1:4">
+      <xsl:if test="number($valueA) = 'NaN'">
+        <c r="A{$insertIndex}" s="22" t="inlineStr">
+          <is>
+            <t><xsl:value-of select="@valueA"/></t>
+          </is>
+        </c>
+      </xsl:if>
+      <xsl:if test="number($valueA) != 'NaN'">
+        <c r="A{$insertIndex}" s="22" t="s">
+          <v>
+              <xsl:value-of select="$valueA"/>
+          </v>
+        </c>
+      </xsl:if>
+      <c r="B{$insertIndex}" s="6">
+        <v>
+          <xsl:value-of select="$valueB"/>
+        </v>
+      </c>
+      <c r="C{$insertIndex}" s="6">
+        <v>
+          <xsl:value-of select="$valueC"/>
+        </v>
+      </c>
+      <c r="D{$insertIndex}" s="23">
+        <v>
+          <xsl:value-of select="$valueD"/>
         </v>
       </c>
     </row>
@@ -207,29 +409,12 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
     <xsl:param name="rowCount" select="0"/>
     <xsl:variable name="insertIndex" select="$rowCount + 1"/>
     <row r="{$insertIndex}" spans="1:4">
-      <!-- <xsl:attribute name="r">
-          <xsl:value-of select="$insertIndex"/>
-      </xsl:attribute> -->
       <c r="{concat('A', $insertIndex)}" s="25" t="s">
-        <!-- <xsl:attribute name="r">
-          <xsl:value-of select="concat('A', $insertIndex)"/>
-        </xsl:attribute> -->
         <v>1</v>
       </c>
       <c r="{concat('B', $insertIndex)}" s="7"/>
-        <!-- <xsl:attribute name="r">
-          <xsl:value-of select="concat('B', $insertIndex)"/>
-        </xsl:attribute> -->
-      <!-- </c> -->
       <c r="{concat('C', $insertIndex)}" s="7"/>
-        <!-- <xsl:attribute name="r">
-          <xsl:value-of select="concat('C', $insertIndex)"/>
-        </xsl:attribute> -->
-      <!-- </c> -->
       <c r="{concat('D', $insertIndex)}" s="26" t="s">
-        <!-- <xsl:attribute name="r">
-          <xsl:value-of select="concat('D', $insertIndex)"/>
-        </xsl:attribute> -->
         <v>1</v>
       </c>
     </row>

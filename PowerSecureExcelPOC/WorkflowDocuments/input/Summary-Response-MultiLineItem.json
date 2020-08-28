@@ -20,11 +20,11 @@
 				},
 				{
 					"variableName": "contingencyAmount",
-					"inputValue": ""
+					"inputValue": "56225.34"
 				},
 				{
 					"variableName": "allianceFeeAmount",
-					"inputValue": ""
+					"inputValue": "12000.00"
 				},
 				{
 					"variableName": "contingencyPercentage",
@@ -52,7 +52,7 @@
 				},
 				{
 					"variableName": "warranty",
-					"inputValue": 0.0
+					"inputValue": 74664.58
 				},
 				{
 					"variableName": "totalCost",
@@ -203,7 +203,7 @@
 					"variableName": "other",
 					"tableItems": [
 						{
-							"item": "Flux Capacitor",
+							"item": "FLUX CAPACITOR",
 							"description": "Generates the 1.21 GigaWatts of power to get to 88 Mph",
 							"cost": 10000000.0,
 							"dpe": 2500.57,
@@ -213,6 +213,59 @@
 							"tax": 0.0,
 							"itemcost": 100000.0,
 							"itemprice": 2000000.384
+						}
+					]
+				},
+				{
+					"variableName": "pmAndEngineering",
+					"tableItems": [
+						{
+							"item": "PROJECT MANAGER",
+							"description": "Leans on shovel",
+							"cost": 0.0,
+							"dpe": 2225.05,
+							"burden": 0.0,
+							"materialBurdon": 0.0,
+							"laborBurdon": 0.0,
+							"tax": 0.0,
+							"itemcost": 2225.05,
+							"itemprice": 3407.47
+						},
+						{
+							"item": "CONSTRUCTION MANGER",
+							"description": "Leans on shovel",
+							"cost": 0.0,
+							"dpe": 2225.05,
+							"burden": 0.0,
+							"materialBurdon": 0.0,
+							"laborBurdon": 0.0,
+							"tax": 0.0,
+							"itemcost": 2225.05,
+							"itemprice": 3407.47
+						},
+						{
+							"item": "SR PROJECT MANGER",
+							"description": "Leans on shovel",
+							"cost": 0.0,
+							"dpe": 2225.05,
+							"burden": 0.0,
+							"materialBurdon": 0.0,
+							"laborBurdon": 0.0,
+							"tax": 0.0,
+							"itemcost": 2225.05,
+							"itemprice": 3407.47
+						},
+						{
+							"item": "ENGINEERING",
+							"description": "Digs Holes",
+							"cost": 0.0,
+							"dpe": 2225.05,
+							"burden": 0.0,
+							"materialBurdon": 0.0,
+							"laborBurdon": 0.0,
+							"tax": 0.0,
+							"itemcost": 2225.05,
+							"itemprice": 3407.47
 						}
 					]
 				},

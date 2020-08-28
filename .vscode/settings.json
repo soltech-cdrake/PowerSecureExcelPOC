@@ -20,14 +20,9 @@
         "# Local History for Visual Studio Code": true,
         ".history/": true,
         "PowerSecureExcelPOC/bin/": true,
-        ".vscode/*": true,
         "**/settings.json": false,
         "**/tasks.json": false,
         "**/launch.json": false,
-        "**/extensions.json": false,
-        "**/*.code-workspace": true,
-        "**/.history/": true,
-        "**/PowerSecureExcelPOC/bin/": true,
-        "PowerSecureExcelPOC/obj": true
+        "**/extensions.json": false
     }
 }

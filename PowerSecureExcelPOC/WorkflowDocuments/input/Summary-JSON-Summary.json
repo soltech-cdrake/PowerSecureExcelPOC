@@ -1,0 +1,427 @@
+{
+	"Items": [
+		{
+			"moduleInputs": [
+				{
+					"variableName": "computedalliancefeepercentage",
+					"inputValue": ""
+				},
+				{
+					"variableName": "computedContingencyAmount",
+					"inputValue": 0.0
+				},
+				{
+					"variableName": "computedalliancefeeamount",
+					"inputValue": 0.0
+				},
+				{
+					"variableName": "computedContingencyPercentage",
+					"inputValue": ""
+				},
+				{
+					"variableName": "contingencyAmount",
+					"inputValue": ""
+				},
+				{
+					"variableName": "allianceFeeAmount",
+					"inputValue": ""
+				},
+				{
+					"variableName": "contingencyPercentage",
+					"inputValue": ""
+				},
+				{
+					"variableName": "allianceFeePercentage",
+					"inputValue": ""
+				},
+				{
+					"variableName": "estimatedSalesTax",
+					"inputValue": false
+				},
+				{
+					"variableName": "salesPriceOverride",
+					"inputValue": ""
+				},
+				{
+					"variableName": "totalSalesPrice",
+					"inputValue": 1241440.0323076924
+				},
+				{
+					"variableName": "totalRevenue",
+					"inputValue": 1241440.0323076924
+				},
+				{
+					"variableName": "warranty",
+					"inputValue": 0.0
+				},
+				{
+					"variableName": "totalCost",
+					"inputValue": 924637.43
+				},
+				{
+					"variableName": "grossProfit",
+					"inputValue": 316802.6
+				},
+				{
+					"variableName": "grossMargin",
+					"inputValue": 25.52
+				},
+				{
+					"variableName": "sgaBurdenRate",
+					"inputValue": 8.0
+				},
+				{
+					"variableName": "operatingIncome",
+					"inputValue": 217487.39741538463
+				},
+				{
+					"variableName": "operatingMargin",
+					"inputValue": 17.518961186639108
+				},
+				{
+					"variableName": "corporateTaxRate",
+					"inputValue": 25.0
+				},
+				{
+					"variableName": "netIncome",
+					"inputValue": 163115.55
+				},
+				{
+					"variableName": "netMargin",
+					"inputValue": 13.13
+				},
+				{
+					"variableName": "totalMaterials",
+					"inputValue": 1091028.4580431705
+				},
+				{
+					"variableName": "kilowattSB",
+					"inputValue": "1,400.00"
+				},
+				{
+					"variableName": "revenuePerkilowattSB",
+					"inputValue": 886.74
+				},
+				{
+					"variableName": "totalLabor",
+					"inputValue": 150411.57426452195
+				},
+				{
+					"variableName": "kilowattLTP",
+					"inputValue": "1,260.00"
+				},
+				{
+					"variableName": "revenuePerkilowattLTP",
+					"inputValue": 985.27
+				},
+				{
+					"variableName": "totalHours",
+					"inputValue": 2472.015872645726
+				},
+				{
+					"variableName": "nexgear",
+					"inputValue": 590.5
+				},
+				{
+					"variableName": "powerfab",
+					"inputValue": 1431.015872645726
+				},
+				{
+					"variableName": "qc",
+					"inputValue": 56.0
+				},
+				{
+					"variableName": "test",
+					"inputValue": 56.0
+				},
+				{
+					"variableName": "packaging",
+					"inputValue": 32.0
+				},
+				{
+					"variableName": "install",
+					"inputValue": 224.5
+				},
+				{
+					"variableName": "engineering",
+					"inputValue": 82.0
+				},
+				{
+					"variableName": "pm",
+					"inputValue": 0.0
+				},
+				{
+					"variableName": "customername",
+					"inputValue": "John Doe"
+				},
+				{
+					"variableName": "ownership",
+					"inputValue": "Company"
+				},
+				{
+					"variableName": "location",
+					"inputValue": "Colorado"
+				},
+				{
+					"variableName": "term",
+					"inputValue": "2"
+				}
+			],
+			"moduleTitle": "Summary",
+			"summaryTable": [
+				{
+					"variableName": "equipment",
+					"tableItems": [
+						{
+							"item": "PowerBlock",
+							"quantity": "1",
+							"description": "T2 PowerBlock, 1300 kW, Standard, 48-hr FT, WP2, SA II, 1-Stairs(s) (1)",
+							"cost": 200761.47672,
+							"raw": 26366.0,
+							"burden": 86104.24,
+							"tax": 14635.51,
+							"itemcost": 327867.23,
+							"itemprice": 361890.51
+						},
+						{
+							"item": "Other EG",
+							"quantity": "1",
+							"description": "GE 100, 100 kW (1)",
+							"cost": 100000.0,
+							"raw": 0.0,
+							"burden": 18000.0,
+							"tax": 0.0,
+							"itemcost": 118000.0,
+							"itemprice": 147500.0
+						},
+						{
+							"item": "MV Switchgear",
+							"quantity": 1.0,
+							"description": "5 kV, 250 MVA, 1200 A, NEMA 3R, 4 section(s)",
+							"cost": 241706.81,
+							"raw": 10615.5,
+							"burden": 34667.36,
+							"tax": 17620.43,
+							"itemcost": 304610.1,
+							"itemprice": 468630.92
+						},
+						{
+							"item": "PEC",
+							"quantity": "1",
+							"description": "PEC1, LV, 20'Lx14'Wx11'H, 4-section(s), 2-Main Door(s), 4-Rear Door(s), 1-2.5-ton HVAC Unit(s), 2-Interior Light(s), 4-Exterior Light(s), 2-Exit Light(s), 2-Switch(es), 2-Receptacle(s), 1-FACP, 2-Smoke Detector(s), 1-Hydrogen Sensor(s), 1-120/208 or 120/240 HPL(s), 1-277/480 HPL(s), 1-25 KVA Transformer(s), 2-Pull Station(s), 2-Horn Strobe(s)  (1)",
+							"cost": 45911.0887,
+							"raw": 8122.801958867532,
+							"burden": 26526.878041132466,
+							"tax": 3346.91836623,
+							"itemcost": 83907.68706623,
+							"itemprice": 128256.6
+						},
+						{
+							"item": "Transformer",
+							"quantity": "1",
+							"description": "XFMR1, Outdoor, Pad-mounted, 5 kV, 480 V, 750 kVA, 8% Z, FR3 (1)",
+							"cost": 15000.0,
+							"raw": 0.0,
+							"burden": 2700.0,
+							"tax": 1093.5,
+							"itemcost": 17700.0,
+							"itemprice": 23218.5
+						}
+					]
+				},
+				{
+					"variableName": "assembly",
+					"tableItems": [
+						{
+							"item": "PowerBlock",
+							"quantity": "1",
+							"description": "Onsite Control Wiring, Onsite Install, Grounding, Pads, Rigging, Onsite Assembly",
+							"cost": 16750.0,
+							"dpe": 3474.576271186441,
+							"burden": 3640.423728813559,
+							"tax": 433.755,
+							"itemcost": 24298.755,
+							"itemprice": 37382.7
+						},
+						{
+							"item": "Other EG",
+							"quantity": "1",
+							"description": "Pads, Rigging, Onsite Install",
+							"cost": 8625.0,
+							"dpe": 1186.44,
+							"burden": 1766.06,
+							"tax": 219.43,
+							"itemcost": 11796.93,
+							"itemprice": 18149.12
+						},
+						{
+							"item": "MV Switchgear",
+							"quantity": 1.0,
+							"description": "Pads, Rigging, Onsite Install",
+							"cost": 20851.85185185185,
+							"dpe": 10511.016949152543,
+							"burden": 4058.4180790960456,
+							"tax": 356.54,
+							"itemcost": 26961.73,
+							"itemprice": 41479.58
+						},
+						{
+							"item": "PEC",
+							"quantity": "1",
+							"description": "Pads, Rigging, Onsite Install",
+							"cost": 5250.0,
+							"dpe": 1694.915254237288,
+							"burden": 1448.3898305084748,
+							"tax": 171.32,
+							"itemcost": 9495.0,
+							"itemprice": 14932.1023076923
+						},
+						{
+							"item": "Transformer",
+							"quantity": "1",
+							"dpe": 2796.6101694915257
+						}
+					]
+				},
+				{
+					"variableName": "other",
+					"tableItems": []
+				},
+				{
+					"variableName": "equipmentHours",
+					"tableItems": [
+						{
+							"item": "PowerBlock",
+							"nexgear": 210.0,
+							"powerfab": 1064.0,
+							"qc": 24.0,
+							"test": 24.0,
+							"packaging": 24.0,
+							"install": 0.0,
+							"engineering": 10.0,
+							"pm": 0.0
+						},
+						{
+							"item": "Other EG",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0
+						},
+						{
+							"item": "MV Switchgear",
+							"nexgear": 370.5,
+							"powerfab": 0.0,
+							"qc": 32.0,
+							"test": 32.0,
+							"packaging": 8.0,
+							"install": 0.0,
+							"engineering": 48.0,
+							"pm": 0.0
+						},
+						{
+							"item": "PEC",
+							"nexgear": 0.0,
+							"powerfab": 367.01587264572597,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 24.0,
+							"pm": 0.0
+						},
+						{
+							"item": "Transformer",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0
+						}
+					]
+				},
+				{
+					"variableName": "installationHours",
+					"tableItems": [
+						{
+							"item": "PowerBlock",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 82.25,
+							"engineering": 0.0,
+							"pm": 0.0
+						},
+						{
+							"item": "Other EG",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.25,
+							"engineering": 0.0,
+							"pm": 0.0
+						},
+						{
+							"item": "MV Switchgear",
+							"nexgear": 10.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 36.0,
+							"engineering": 0.0,
+							"pm": 0.0
+						},
+						{
+							"item": "PEC",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 40.0,
+							"engineering": 0.0,
+							"pm": 0.0
+						},
+						{
+							"item": "Transformer",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 66.0,
+							"engineering": 0.0,
+							"pm": 0.0
+						}
+					]
+				},
+				{
+					"variableName": "laborHours",
+					"tableItems": []
+				},
+				{
+					"variableName": "maintenanceandmonitoring",
+					"tableItems": []
+				}
+			],
+			"estimateId": "af24bba3-3008-4fa0-a6d1-9207f55aefc6",
+			"boliNumber": "1",
+			"boliid": "952dd8d2-6298-463e-b243-9a4ac7e2c922"
+		}
+	],
+	"Count": 1,
+	"Message": "",
+	"Status": 200
+}
