@@ -15,3 +15,4 @@ PowerSecureExcelPOC/obj
 output/FlattenedOPC/*
 output/Intermediate/*
 output/StandardOPC/*
+.DS_Store

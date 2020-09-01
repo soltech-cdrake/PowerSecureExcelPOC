@@ -79,7 +79,7 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
         <xsl:with-param name = "headerD" select="9"/>
       </xsl:call-template>
     </xsl:for-each>
-    <!--Add Data from the "Other" Summary table in the JSON file this represents misc estimate items-->>
+    <!--Add Data from the "Other" Summary table in the JSON file this represents misc estimate items-->
     <xsl:variable name="otherCount" select="count(Items/summaryTable[variableName='other']/tableItems[not(item = 'Warranty')][not(item = 'Alliance')][not(item = 'Contingency')])"/>
     <xsl:for-each select ="key('summary', 'other')">
       <xsl:call-template name="AddOwnedAssetTable">
@@ -139,7 +139,7 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
         <xsl:with-param name = "headerD" select="9"/>
       </xsl:call-template>
     </xsl:for-each>
-    <!--Add Grand total cost summary line-->>
+    <!--Add Grand total cost summary line-->
     <xsl:call-template name="AddOwnedAssetSummaryTable">
       <!-- Initially adding 6 to count b/c each previously inserted table adds a header and spacer-->
       <xsl:with-param name = "rowCount" select="14 + $currentRowCount + $equipmentCount + $assemblyCount + $otherCount + $pmAndEngineeringCount + $allianceCount + $warrantyCount + $contingencyCount"/>
@@ -305,7 +305,7 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
     <xsl:param name="rowCount" select="0"/>
     <xsl:variable name="insertIndex" select="$rowCount + 1"/>
     <row r="{$insertIndex}" spans="1:4">
-      <c r="A{$insertIndex}" s="22">
+      <c r="A{$insertIndex}" s="22" t="inlineStr">
         <is><t><xsl:value-of select="item"/></t></is>
       </c>
       <c r="B{$insertIndex}" s="6">
@@ -364,14 +364,14 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
     <xsl:param name="valueD" select="0"/>
     <xsl:variable name="insertIndex" select="$rowCount + 1"/>
     <row r="{$insertIndex}" spans="1:4">
-      <xsl:if test="number($valueA) = 'NaN'">
+      <xsl:if test="number($valueA) != number($valueA)">
         <c r="A{$insertIndex}" s="39" t="inlineStr">
           <is>
             <t><xsl:value-of select="@valueA"/></t>
           </is>
         </c>
       </xsl:if>
-      <xsl:if test="number($valueA) != 'NaN'">
+      <xsl:if test="number($valueA) = number($valueA)">
         <c r="A{$insertIndex}" s="39" t="s">
           <v>
               <xsl:value-of select="$valueA"/>
@@ -404,14 +404,14 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
     <xsl:param name="valueD" select="0"/>
     <xsl:variable name="insertIndex" select="$rowCount + 1"/>
     <row r="{$insertIndex}" spans="1:4">
-      <xsl:if test="number($valueA) = 'NaN'">
+      <xsl:if test="number($valueA) != number($valueA)">
         <c r="A{$insertIndex}" s="22" t="inlineStr">
           <is>
             <t><xsl:value-of select="@valueA"/></t>
           </is>
         </c>
       </xsl:if>
-      <xsl:if test="number($valueA) != 'NaN'">
+      <xsl:if test="number($valueA) = number($valueA)">
         <c r="A{$insertIndex}" s="22" t="s">
           <v>
               <xsl:value-of select="$valueA"/>
@@ -1478,7 +1478,88 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
               <col min="3" max="4" width="38.140625" bestFit="1" customWidth="1" />
             </cols>
             <sheetData>
+            
               <xsl:call-template name="AddSheetData"/>
+            <!--
+              <row r="5" spans="1:4" ht="15.75">
+              <c r="A5" s="13" t="s">
+                  <v>0</v>
+              </c>
+              <c r="B5" s="14" t="s">
+                  <v>1</v>
+              </c>
+              <c r="C5" s="15" t="s">
+                  <v>2</v>
+              </c>
+              <c r="D5" s="16" t="s">
+                  <v>3</v>
+              </c>
+              </row>
+              <row r="6" spans="1:4">
+              <c r="A6" s="17" t="s">
+                  <v>4</v>
+              </c>
+              <c r="B6" s="1" t="s">
+                  <v>1</v>
+              </c>
+              <c r="C6" s="1" t="s">
+                  <v>1</v>
+              </c>
+              <c r="D6" s="18" t="s">
+                  <v>1</v>
+              </c>
+              </row>
+              <row r="7" spans="1:4">
+              <c r="A7" s="19" t="s">
+                  <v>5</v>
+              </c>
+              <c r="B7" s="2" />
+              <c r="C7" s="2" />
+              <c r="D7" s="20" t="s">
+                  <v>1</v>
+              </c>
+              </row>
+              <row r="8" spans="1:4">
+                  <c r="A8" s="19" t="s">
+                      <v>1</v>
+                  </c>
+                  <c r="B8" s="2" />
+                  <c r="C8" s="2" />
+                  <c r="D8" s="20" t="s">
+                      <v>1</v>
+                  </c>
+              </row>
+              <row r="9" spans="1:4">
+                  <c r="A9" s="12" t="s">
+                      <v>6</v>
+                  </c>
+                  <c r="B9" s="3" t="s">
+                      <v>7</v>
+                  </c>
+                  <c r="C9" s="3" t="s">
+                      <v>8</v>
+                  </c>
+                  <c r="D9" s="21" t="s">
+                      <v>9</v>
+                  </c>
+              </row>
+              <row r="10" spans="1:4">
+                <c r="A10" s="22" t="inlineStr">
+                    <is>
+                        <t>PowerBlock</t>
+                    </is>
+                </c>
+                <c r="B10" s="6">
+                    <v>201761.47672</v>
+                </c>
+                <c r="C10" s="6">
+                    <v>27366</v>
+                </c>
+                <c r="D10" s="23">
+                    <v>14635.51</v>
+                </c>
+              </row>
+              -->
             </sheetData>
 
             <pageMargins left="0.7" right="0.7" top="0.75" bottom="0.75" header="0.3" footer="0.3" />

@@ -695,14 +695,14 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
     <xsl:param name="itemPrice" select="0"/>
     <xsl:variable name="insertIndex" select="$rowCount + 1"/>
     <row r="{$insertIndex}" spans="1:4">
-      <xsl:if test="number($title) = 'NaN'">
+      <xsl:if test="number($title) != number($title)">
         <c r="A{$insertIndex}" s="18" t="inlineStr">
           <is>
             <t><xsl:value-of select="@title"/></t>
           </is>
         </c>
       </xsl:if>
-      <xsl:if test="number($title) != 'NaN'">
+      <xsl:if test="number($title) = number($title)">
         <c r="A{$insertIndex}" s="18" t="s">
           <v>
               <xsl:value-of select="$title"/>
@@ -1125,14 +1125,14 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
     <xsl:param name="epcEngineering" select="0"/>
     <xsl:variable name="insertIndex" select="$rowCount + 1"/>
     <row r="{$insertIndex}" spans="1:4">
-      <xsl:if test="number($title) = 'NaN'">
+      <xsl:if test="number($title) != number($title)">
         <c r="A{$insertIndex}" s="18" t="inlineStr">
           <is>
             <t><xsl:value-of select="@title"/></t>
           </is>
         </c>
       </xsl:if>
-      <xsl:if test="number($title) != 'NaN'">
+      <xsl:if test="number($title) = number($title)">
         <c r="A{$insertIndex}" s="18" t="s">
           <v>
               <xsl:value-of select="$title"/>
