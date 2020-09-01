@@ -32,7 +32,7 @@ namespace PowerSecurePDFPOC
             var outputJSONAsXmlFile = "";
             var outputFlattenedOPCFile = "";
             var outputExcelFile = "";
-            if (normalizedDocType == "doctype=template")
+            if (normalizedDocType == "template")
             {
                 var inputTemplateFile = "";
                 var inputTemplateFileName = "";
@@ -44,7 +44,8 @@ namespace PowerSecurePDFPOC
                     var templateSpreadsheet = SpreadsheetDocument.Open(inputTemplateFile, false);
                     var flattenedTemplateXDoc = templateSpreadsheet.ToFlatOpcDocument();
                     flattenedTemplateXDoc.Save(outputFlattendOPCTemplateFile);
-                    echo($"input templateFile name: {outputFlattendOPCTemplateFile}", pause);
+                    echo($"output templateFile name: {outputFlattendOPCTemplateFile}", pause);
+                    return;
                 }
                 else
                 {
@@ -52,7 +53,7 @@ namespace PowerSecurePDFPOC
                     return;
                 }
             }
-            else if(normalizedDocType == "doctype=ownedasset")
+            else if(normalizedDocType == "ownedasset")
             {
                 var inputJSONFileName = "";
                 if(GetFileParameter(args, 1, ref inputJSONFileName))
@@ -70,17 +71,17 @@ namespace PowerSecurePDFPOC
                     return;
                 }
             }
-            else if(normalizedDocType == "doctype=summary")
+            else if(normalizedDocType == "summary")
             {
                 var inputJSONFileName = "";
                 if(GetFileParameter(args, 1, ref inputJSONFileName))
                 {
                     inputJSONFile = $"./WorkflowDocuments/input/{inputJSONFileName}";
-                    xsltFile = @"./assets/templates/OwnedAssetReport_MultiLine/PowerSecure-EstimateSummary-Templatexml.xslt";
+                    xsltFile = @"./assets/templates/EstimateSummary/PowerSecure-EstimateSummary-Template-Instrumentedxml.xslt";
                     var timestamp = DateTime.Now.Ticks.ToString();
                     outputJSONAsXmlFile = $"./WorkflowDocuments/output/Intermediate/Summary-Response-Summary-{timestamp}.xml";
-                    outputFlattenedOPCFile = $"./WorkflowDocuments/output/FlattenedOPC/OwnedAsset-FlattenedOPC-{timestamp}.xml";
-                    outputExcelFile = $"./WorkflowDocuments/output/StandardOPC/OwnedAsset-{timestamp}.xlsx";
+                    outputFlattenedOPCFile = $"./WorkflowDocuments/output/FlattenedOPC/EstimateSummary-FlattenedOPC-{timestamp}.xml";
+                    outputExcelFile = $"./WorkflowDocuments/output/StandardOPC/EstimateSummary-{timestamp}.xlsx";
                 }
                 else
                 {
@@ -144,7 +145,7 @@ namespace PowerSecurePDFPOC
             // Convert the flattened document output to Standard OPC for output as normal XLSX file
             //var xDocument = System.Xml.Linq.XDocument.Load(outputFlattenedOPCFile);
             //var spreadsheet = SpreadsheetDocument.FromFlatOpcDocument(xDocument);
-            var spreadsheet = SpreadsheetDocument.FromFlatOpcString(stringWriter.ToString());
+            var spreadsheet = SpreadsheetDocument.FromFlatOpcString(stringWriter.ToString().Replace("&gt;",""));
             var package = spreadsheet.SaveAs(outputExcelFile);
             package.Close();
             xmlWriter.Close();

@@ -80,8 +80,8 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       </xsl:call-template>
     </xsl:for-each>
     <!--Add Data from the "Other" Summary table in the JSON file this represents misc estimate items-->>
-    <xsl:variable name="otherCount" select="count(Items/summaryTable[variableName='other']/tableItems)"/>
-    <xsl:for-each select="key('summary', 'other')">
+    <xsl:variable name="otherCount" select="count(Items/summaryTable[variableName='other']/tableItems[not(item = 'Warranty')][not(item = 'Alliance')][not(item = 'Contingency')])"/>
+    <xsl:for-each select ="key('summary', 'other')">
       <xsl:call-template name="AddOwnedAssetTable">
         <!-- Initially adding 4 to count b/c each previously inserted table adds a header and spacer-->
         <xsl:with-param name = "rowCount" select="4 + $currentRowCount + $equipmentCount + $assemblyCount"/>
@@ -92,8 +92,8 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       </xsl:call-template>
     </xsl:for-each>
     <!--Add table for the PM and Engineering line items-->
-    <xsl:variable name="pmAndEngineeringCount" select="count(Items/summaryTable[variableName='pmAndEngineering']/tableItems)"/>
-    <xsl:for-each select="key('summary', 'pmAndEngineering')">
+    <xsl:variable name="pmAndEngineeringCount" select="count(Items/summaryTable[variableName='PME']/tableItems)"/>
+    <xsl:for-each select="key('summary', 'PME')">
       <xsl:call-template name="AddOwnedAssetTable">
         <!-- Initially adding 6 to count b/c each previously inserted table adds a header and spacer-->
         <xsl:with-param name = "rowCount" select="6 + $currentRowCount + $equipmentCount + $assemblyCount + $otherCount"/>
@@ -104,35 +104,41 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       </xsl:call-template>
     </xsl:for-each>
     <!--Add table for the AlliancePartnerFee line items-->
-    <xsl:variable name="allianceCount" select="1"/>
-    <xsl:call-template name="AddOwnedAssetAllianceTable">
-      <!-- Initially adding 8 to count b/c each previously inserted table adds a header and spacer-->
-      <xsl:with-param name = "rowCount" select="8 + $currentRowCount + $equipmentCount + $assemblyCount + $otherCount + $pmAndEngineeringCount"/>
-      <xsl:with-param name = "headerA" select="35"/>
-      <xsl:with-param name = "headerB" select="7"/>
-      <xsl:with-param name = "headerC" select="8"/>
-      <xsl:with-param name = "headerD" select="9"/>
-    </xsl:call-template>
+    <xsl:variable name="allianceCount" select="count(Items/summaryTable[variableName='other']/tableItems[item='Alliance'])"/>
+    <xsl:for-each select="key('summary', 'other')">
+      <xsl:call-template name="AddOwnedAssetAllianceTable">
+        <!-- Initially adding 8 to count b/c each previously inserted table adds a header and spacer-->
+        <xsl:with-param name = "rowCount" select="8 + $currentRowCount + $equipmentCount + $assemblyCount + $otherCount + $pmAndEngineeringCount"/>
+        <xsl:with-param name = "headerA" select="35"/>
+        <xsl:with-param name = "headerB" select="7"/>
+        <xsl:with-param name = "headerC" select="8"/>
+        <xsl:with-param name = "headerD" select="9"/>
+      </xsl:call-template>
+    </xsl:for-each>  
     <!--Add table for the Warranty line items-->
-    <xsl:variable name="warrantyCount" select="1"/>
-    <xsl:call-template name="AddOwnedAssetWarrantyTable">
-      <!-- Initially adding 10 to count b/c each previously inserted table adds a header and spacer-->
-      <xsl:with-param name = "rowCount" select="10 + $currentRowCount + $equipmentCount + $assemblyCount + $otherCount + $pmAndEngineeringCount + $allianceCount"/>
-      <xsl:with-param name = "headerA" select="36"/>
-      <xsl:with-param name = "headerB" select="7"/>
-      <xsl:with-param name = "headerC" select="8"/>
-      <xsl:with-param name = "headerD" select="9"/>
-    </xsl:call-template>
+    <xsl:variable name="warrantyCount" select="count(Items/summaryTable[variableName='other']/tableItems[item='Warranty'])"/>
+    <xsl:for-each select="key('summary', 'other')">
+      <xsl:call-template name="AddOwnedAssetWarrantyTable">
+        <!-- Initially adding 10 to count b/c each previously inserted table adds a header and spacer-->
+        <xsl:with-param name = "rowCount" select="10 + $currentRowCount + $equipmentCount + $assemblyCount + $otherCount + $pmAndEngineeringCount + $allianceCount"/>
+        <xsl:with-param name = "headerA" select="36"/>
+        <xsl:with-param name = "headerB" select="7"/>
+        <xsl:with-param name = "headerC" select="8"/>
+        <xsl:with-param name = "headerD" select="9"/>
+      </xsl:call-template>
+    </xsl:for-each>
     <!--Add table for the Warranty line items-->
-    <xsl:variable name="contingencyCount" select="1"/>
-    <xsl:call-template name="AddOwnedAssetContingencyTable">
-      <!-- Initially adding 10 to count b/c each previously inserted table adds a header and spacer-->
-      <xsl:with-param name = "rowCount" select="12 + $currentRowCount + $equipmentCount + $assemblyCount + $otherCount + $pmAndEngineeringCount + $allianceCount + $warrantyCount"/>
-      <xsl:with-param name = "headerA" select="38"/>
-      <xsl:with-param name = "headerB" select="7"/>
-      <xsl:with-param name = "headerC" select="8"/>
-      <xsl:with-param name = "headerD" select="9"/>
-    </xsl:call-template>
+    <xsl:variable name="contingencyCount" select="count(Items/summaryTable[variableName='other']/tableItems[item='Contingency'])"/>
+    <xsl:for-each select="key('summary', 'other')">
+      <xsl:call-template name="AddOwnedAssetContingencyTable">
+        <!-- Initially adding 10 to count b/c each previously inserted table adds a header and spacer-->
+        <xsl:with-param name = "rowCount" select="12 + $currentRowCount + $equipmentCount + $assemblyCount + $otherCount + $pmAndEngineeringCount + $allianceCount + $warrantyCount"/>
+        <xsl:with-param name = "headerA" select="38"/>
+        <xsl:with-param name = "headerB" select="7"/>
+        <xsl:with-param name = "headerC" select="8"/>
+        <xsl:with-param name = "headerD" select="9"/>
+      </xsl:call-template>
+    </xsl:for-each>
     <!--Add Grand total cost summary line-->>
     <xsl:call-template name="AddOwnedAssetSummaryTable">
       <!-- Initially adding 6 to count b/c each previously inserted table adds a header and spacer-->
@@ -154,13 +160,13 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       <xsl:with-param name = "headerC" select="$headerC"/>
       <xsl:with-param name = "headerD" select="$headerD"/>
     </xsl:call-template>
-    <xsl:for-each select = "tableItems">
+    <xsl:for-each select = "tableItems[not(item = 'Warranty')][not(item = 'Alliance')][not(item = 'Contingency')]">
       <xsl:call-template name="AddOwnedAssetCostTableItem">
         <xsl:with-param name="rowCount" select="(position()-1) + $insertIndex"/>
       </xsl:call-template>
     </xsl:for-each>
     <xsl:call-template name="AddOwnedAssetAdHocSpacer">
-        <xsl:with-param name="rowCount" select="count(tableItems) + $insertIndex"/>
+        <xsl:with-param name="rowCount" select="count(tableItems[not(item = 'Warranty')][not(item = 'Alliance')][not(item = 'Contingency')]) + $insertIndex"/>
     </xsl:call-template>
   </xsl:template>
 
@@ -169,7 +175,7 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
     <xsl:variable name="insertIndex" select="$rowCount + 1"/>
     <xsl:variable name="sumMaterial" select = "sum(Items/summaryTable/tableItems/cost)+sum(Items/summaryTable/tableItems/materialBurdon)"/>
     <xsl:variable name="sumRawLabor" select = "sum(Items/summaryTable/tableItems/raw)+sum(Items/summaryTable/tableItems/laborBurdon)"/>
-    <xsl:variable name="sumDpeLabor" select = "sum(Items/summaryTable/tableItems/dpe)+sum(Items/summaryTable/tableItems/laborBurdon) + (Items/moduleInputs[variableName='allianceFeeAmount']/inputValue) + Items/moduleInputs[variableName='contingencyAmount']/inputValue + Items/moduleInputs[variableName='warranty']/inputValue"/>
+    <xsl:variable name="sumDpeLabor" select = "sum(Items/summaryTable/tableItems/dpe)+sum(Items/summaryTable/tableItems/laborBurdon) + (Items/summaryTable[variableName='other']/tableItems[item='Alliance']/itemcost) + Items/summaryTable[variableName='other']/tableItems[item='Warranty']/itemcost + Items/summaryTable[variableName='other']/tableItems[item='Contingency']/itemcost"/>
     <xsl:variable name="sumTax" select = "sum(Items/summaryTable/tableItems/tax)"/>
     <xsl:call-template name="AddOwnedAssetSummaryItem">
       <xsl:with-param name = "rowCount" select="$rowCount"/>
@@ -194,15 +200,17 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       <xsl:with-param name = "headerC" select="$headerC"/>
       <xsl:with-param name = "headerD" select="$headerD"/>
     </xsl:call-template>
-    <xsl:call-template name="AddOwnedAssetLineItem">
-      <xsl:with-param name = "rowCount" select="$insertIndex"/>
-      <xsl:with-param name = "valueA" select="35"/>
-      <xsl:with-param name = "valueB" select="0.0"/>
-      <xsl:with-param name = "valueC" select="Items/moduleInputs[variableName='allianceFeeAmount']/inputValue"/>
-      <xsl:with-param name = "valueD" select="0.0"/>
-    </xsl:call-template>
+    <xsl:for-each select = "tableItems[item='Alliance']">
+      <xsl:call-template name="AddOwnedAssetLineItem">
+        <xsl:with-param name = "rowCount" select="(position()-1) + $insertIndex"/>
+        <xsl:with-param name = "valueA" select="item"/>
+        <xsl:with-param name = "valueB" select="0.0"/>
+        <xsl:with-param name = "valueC" select="itemcost"/>
+        <xsl:with-param name = "valueD" select="0.0"/>
+      </xsl:call-template>
+    </xsl:for-each>
     <xsl:call-template name="AddOwnedAssetAdHocSpacer">
-        <xsl:with-param name="rowCount" select="1 + $insertIndex"/>
+        <xsl:with-param name="rowCount" select="count(tableItems[item='Alliance']) + $insertIndex"/>
     </xsl:call-template>
   </xsl:template>
 
@@ -220,15 +228,17 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       <xsl:with-param name = "headerC" select="$headerC"/>
       <xsl:with-param name = "headerD" select="$headerD"/>
     </xsl:call-template>
-    <xsl:call-template name="AddOwnedAssetLineItem">
-      <xsl:with-param name = "rowCount" select="$insertIndex"/>
-      <xsl:with-param name = "valueA" select="37"/>
-      <xsl:with-param name = "valueB" select="0.0"/>
-      <xsl:with-param name = "valueC" select="Items/moduleInputs[variableName='warranty']/inputValue"/>
-      <xsl:with-param name = "valueD" select="0.0"/>
-    </xsl:call-template>
+    <xsl:for-each select = "tableItems[item='Warranty']">
+      <xsl:call-template name="AddOwnedAssetLineItem">
+        <xsl:with-param name = "rowCount" select="(position()-1) + $insertIndex"/>
+        <xsl:with-param name = "valueA" select="item"/>
+        <xsl:with-param name = "valueB" select="0.0"/>
+        <xsl:with-param name = "valueC" select="itemcost"/>
+        <xsl:with-param name = "valueD" select="0.0"/>
+      </xsl:call-template>
+    </xsl:for-each>
     <xsl:call-template name="AddOwnedAssetAdHocSpacer">
-        <xsl:with-param name="rowCount" select="1 + $insertIndex"/>
+        <xsl:with-param name="rowCount" select="count(tableItems[item='Warranty']) + $insertIndex"/>
     </xsl:call-template>
   </xsl:template>
 
@@ -246,15 +256,17 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       <xsl:with-param name = "headerC" select="$headerC"/>
       <xsl:with-param name = "headerD" select="$headerD"/>
     </xsl:call-template>
-    <xsl:call-template name="AddOwnedAssetLineItem">
-      <xsl:with-param name = "rowCount" select="$insertIndex"/>
-      <xsl:with-param name = "valueA" select="38"/>
-      <xsl:with-param name = "valueB" select="0.0"/>
-      <xsl:with-param name = "valueC" select="Items/moduleInputs[variableName='contingencyAmount']/inputValue"/>
-      <xsl:with-param name = "valueD" select="0.0"/>
-    </xsl:call-template>
+    <xsl:for-each select = "tableItems[item='Contingency']">
+      <xsl:call-template name="AddOwnedAssetLineItem">
+        <xsl:with-param name = "rowCount" select="(position()-1) + $insertIndex"/>
+        <xsl:with-param name = "valueA" select="item"/>
+        <xsl:with-param name = "valueB" select="0.0"/>
+        <xsl:with-param name = "valueC" select="itemcost"/>
+        <xsl:with-param name = "valueD" select="0.0"/>
+      </xsl:call-template>
+    </xsl:for-each>
     <xsl:call-template name="AddOwnedAssetAdHocSpacer">
-        <xsl:with-param name="rowCount" select="1 + $insertIndex"/>
+        <xsl:with-param name="rowCount" select="count(tableItems[item='Contingency']) + $insertIndex"/>
     </xsl:call-template>
   </xsl:template>
 
@@ -298,22 +310,41 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       </c>
       <c r="B{$insertIndex}" s="6">
         <v>
-          <xsl:variable name="cost" select="cost"/>
-          <xsl:variable name="materialBurdon" select="materialBurdon"/>
-          <xsl:value-of select="$cost + $materialBurdon"/>
+          <xsl:choose>
+            <xsl:when test="cost and materialBurdon">
+              <xsl:variable name="cost" select="cost"/>
+              <xsl:variable name="materialBurdon" select="materialBurdon"/>
+              <xsl:value-of select="$cost + $materialBurdon"/>
+            </xsl:when>  
+            <xsl:otherwise>
+              <xsl:value-of select="0"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </v>
       </c>
       <c r="C{$insertIndex}" s="6">
         <v>
-          <xsl:variable name="laborBurdon" select="laborBurdon"/>
-          <xsl:if test="raw">
-            <xsl:variable name="raw" select="raw"/>
-            <xsl:value-of select="$raw + $laborBurdon"/>
-          </xsl:if>
-          <xsl:if test="dpe">
-            <xsl:variable name="dpe" select="dpe"/>
-            <xsl:value-of select="$dpe + $laborBurdon"/>
-          </xsl:if>
+          <xsl:choose>
+            <xsl:when test="laborBurdon">
+              <xsl:variable name="laborBurdon" select="laborBurdon"/>
+              <xsl:if test="raw">
+                <xsl:variable name="raw" select="raw"/>
+                <xsl:value-of select="$raw + $laborBurdon"/>
+              </xsl:if>
+              <xsl:if test="dpe">
+                <xsl:variable name="dpe" select="dpe"/>
+                <xsl:value-of select="$dpe + $laborBurdon"/>
+              </xsl:if>
+            </xsl:when>  
+            <xsl:otherwise>
+              <xsl:if test="raw">
+                <xsl:value-of select="raw"/>
+              </xsl:if>
+              <xsl:if test="dpe">
+                <xsl:value-of select="dpe"/>
+              </xsl:if>
+            </xsl:otherwise>
+          </xsl:choose>
         </v>
       </c>
       <c r="D{$insertIndex}" s="23">

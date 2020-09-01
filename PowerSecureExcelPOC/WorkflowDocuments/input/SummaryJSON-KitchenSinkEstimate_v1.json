@@ -1,0 +1,1565 @@
+{
+	"Items": [
+		{
+			"moduleInputs": [
+				{
+					"variableName": "computedalliancefeepercentage",
+					"inputValue": 5.0
+				},
+				{
+					"variableName": "computedContingencyAmount",
+					"inputValue": 89132.096
+				},
+				{
+					"variableName": "computedalliancefeeamount",
+					"inputValue": 113506.01
+				},
+				{
+					"variableName": "computedContingencyPercentage",
+					"inputValue": 5.0
+				},
+				{
+					"variableName": "contingencyAmount",
+					"inputValue": null
+				},
+				{
+					"variableName": "allianceFeeAmount",
+					"inputValue": null
+				},
+				{
+					"variableName": "contingencyPercentage",
+					"inputValue": "5"
+				},
+				{
+					"variableName": "allianceFeePercentage",
+					"inputValue": "5"
+				},
+				{
+					"variableName": "estimatedSalesTax",
+					"inputValue": false
+				},
+				{
+					"variableName": "salesPriceOverride",
+					"inputValue": "3500000"
+				},
+				{
+					"variableName": "totalSalesPrice",
+					"inputValue": "3500000"
+				},
+				{
+					"variableName": "totalRevenue",
+					"inputValue": 3500000.0
+				},
+				{
+					"variableName": "warranty",
+					"inputValue": 0.0
+				},
+				{
+					"variableName": "totalCost",
+					"inputValue": 1871774.02
+				},
+				{
+					"variableName": "grossProfit",
+					"inputValue": 1628225.98
+				},
+				{
+					"variableName": "grossMargin",
+					"inputValue": 46.53
+				},
+				{
+					"variableName": "sgaBurdenRate",
+					"inputValue": 8.0
+				},
+				{
+					"variableName": "operatingIncome",
+					"inputValue": 1348225.98
+				},
+				{
+					"variableName": "operatingMargin",
+					"inputValue": 38.520742285714288
+				},
+				{
+					"variableName": "corporateTaxRate",
+					"inputValue": 25.0
+				},
+				{
+					"variableName": "netIncome",
+					"inputValue": 1011169.49
+				},
+				{
+					"variableName": "netMargin",
+					"inputValue": 28.89
+				},
+				{
+					"variableName": "totalMaterials",
+					"inputValue": 2814438.519223439
+				},
+				{
+					"variableName": "kilowattSB",
+					"inputValue": "1500.00"
+				},
+				{
+					"variableName": "revenuePerkilowattSB",
+					"inputValue": 2333.33
+				},
+				{
+					"variableName": "totalLabor",
+					"inputValue": 685561.4807765612
+				},
+				{
+					"variableName": "kilowattLTP",
+					"inputValue": "1350.00"
+				},
+				{
+					"variableName": "revenuePerkilowattLTP",
+					"inputValue": 2592.59
+				},
+				{
+					"variableName": "totalHours",
+					"inputValue": 4188.373389312393
+				},
+				{
+					"variableName": "nexgear",
+					"inputValue": 1310.0
+				},
+				{
+					"variableName": "powerfab",
+					"inputValue": 1527.015872645726
+				},
+				{
+					"variableName": "qc",
+					"inputValue": 112.0
+				},
+				{
+					"variableName": "test",
+					"inputValue": 112.0
+				},
+				{
+					"variableName": "packaging",
+					"inputValue": 48.0
+				},
+				{
+					"variableName": "install",
+					"inputValue": 925.3575166666667
+				},
+				{
+					"variableName": "engineering",
+					"inputValue": 154.0
+				},
+				{
+					"variableName": "pm",
+					"inputValue": 0.0
+				},
+				{
+					"variableName": "epcengineering",
+					"inputValue": 324.0
+				},
+				{
+					"variableName": "customername",
+					"inputValue": "John Doe"
+				},
+				{
+					"variableName": "ownership",
+					"inputValue": "Company"
+				},
+				{
+					"variableName": "location",
+					"inputValue": "Colorado"
+				},
+				{
+					"variableName": "term",
+					"inputValue": "2"
+				}
+			],
+			"moduleTitle": "Summary",
+			"summaryTable": [
+				{
+					"variableName": "equipment",
+					"tableItems": [
+						{
+							"item": "PowerBlock",
+							"quantity": "1",
+							"description": "PB1: T2 PowerBlock, 1300 kW, Standard, 48-hr FT, WP2, SA III, 1-Stairs(s) (1)",
+							"cost": 200761.47672,
+							"raw": 26366.0,
+							"burden": 86104.24,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 14635.51,
+							"itemcost": 327867.23,
+							"itemprice": 624389.8478984677
+						},
+						{
+							"item": "Other EG",
+							"quantity": "1",
+							"description": "GE 100, 100 kW (1)",
+							"cost": 100000.0,
+							"raw": 0.0,
+							"burden": 18000.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 118000.0,
+							"itemprice": 223000.25376992874
+						},
+						{
+							"item": "Other EG",
+							"quantity": "1",
+							"description": "OEG1, 100 kW (1)",
+							"cost": 100000.0,
+							"raw": 0.0,
+							"burden": 18000.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 118000.0,
+							"itemprice": 223000.25376992874
+						},
+						{
+							"item": "MV Switchgear",
+							"quantity": 1.0,
+							"description": "MV2: 27 kV, 16 kA SCA, 1200 A, NEMA 3R, 4 section(s)",
+							"cost": 309362.37,
+							"raw": 14995.0,
+							"burden": 48969.62,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 22552.52,
+							"itemcost": 395879.51,
+							"itemprice": 920795.1102197135
+						},
+						{
+							"item": "MV Switchgear",
+							"quantity": 1.0,
+							"description": "MV1: 5 kV, 250 MVA, 1200 A, NEMA 3R, 4 section(s)",
+							"cost": 235068.98,
+							"raw": 10435.0,
+							"burden": 34077.89,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 17136.53,
+							"itemcost": 296718.4,
+							"itemprice": 690151.5416501472
+						},
+						{
+							"item": "PEC",
+							"quantity": "1",
+							"description": "LV, 20'Lx14'Wx11'H, 4-section(s), 2-Main Door(s), 4-Rear Door(s), 1-2.5-ton HVAC Unit(s), 2-Interior Light(s), 4-Exterior Light(s), 2-Exit Light(s), 2-Switch(es), 2-Receptacle(s), 1-FACP, 2-Smoke Detector(s), 1-Hydrogen Sensor(s), 1-120/208 or 120/240 HPL(s), 1-277/480 HPL(s), 1-25 KVA Transformer(s), 2-Pull Station(s), 2-Horn Strobe(s)  (1)",
+							"cost": 45911.0887,
+							"raw": 8122.801958867532,
+							"burden": 26526.878041132466,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 3346.91836623,
+							"itemcost": 83907.68706623,
+							"itemprice": 193906.80913673386
+						},
+						{
+							"item": "Transformer",
+							"quantity": "1",
+							"description": "XFMR1, Outdoor, Pad-mounted, 5 kV, 480 V, 750 kVA, 8% Z, FR3 (1)",
+							"cost": 15000.0,
+							"raw": 0.0,
+							"burden": 2700.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 1093.5,
+							"itemcost": 17700.0,
+							"itemprice": 35103.26367564129
+						},
+						{
+							"item": "Other Equipment",
+							"quantity": "1",
+							"description": "RAP: 1-RAP",
+							"cost": 1692.0,
+							"raw": 190.0,
+							"burden": 620.4887,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 123.35,
+							"itemcost": 2625.84,
+							"itemprice": 6007.143039401159
+						},
+						{
+							"item": "Other Equipment",
+							"quantity": "1",
+							"description": "Monitoring Box",
+							"cost": 3000.0,
+							"raw": 152.0,
+							"burden": 496.39096,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 218.7,
+							"itemcost": 3867.09096,
+							"itemprice": 7225.495476709869
+						},
+						{
+							"item": "Other Equipment",
+							"quantity": 1.0,
+							"description": "Controls Cabinet with Versamax, Installed in PEC, Onsite Install, Pads, Rigging",
+							"cost": 4984.0,
+							"raw": 1672.0,
+							"burden": 5460.30056,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 363.3336,
+							"itemcost": 12479.63416,
+							"itemprice": 28731.195461640385
+						},
+						{
+							"item": "Other Equipment",
+							"quantity": 1.0,
+							"description": "QLVS1: 1000A, Switchgear, 4 section(s), , NEMA 3R, 100 NexGear hour(s)",
+							"cost": 61571.47,
+							"raw": 4196.0,
+							"burden": 13703.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 4488.560163,
+							"itemcost": 92063.93,
+							"itemprice": 189146.04853264069
+						},
+						{
+							"item": "Other Equipment",
+							"quantity": "1",
+							"description": "some stuff",
+							"cost": 100.0,
+							"raw": 0.0,
+							"burden": 0.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 7.29,
+							"itemcost": 107.29,
+							"itemprice": 200.00476997439913
+						},
+						{
+							"item": "Other Equipment",
+							"description": "Purchased ATS: PATS1: 800A, 3-Pole, Open, Isolation Bypass",
+							"cost": 8000.0,
+							"raw": 0.0,
+							"burden": 0.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 583.2,
+							"itemcost": 8583.2,
+							"itemprice": 17102.532004719917
+						}
+					]
+				},
+				{
+					"variableName": "assembly",
+					"tableItems": [
+						{
+							"item": "PowerBlock",
+							"quantity": "1",
+							"description": "Onsite Control Wiring, Onsite Install, Grounding, Pads, Rigging, Onsite Assembly",
+							"cost": 16750.0,
+							"dpe": 3474.576271186441,
+							"burden": 3640.423728813559,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 433.755,
+							"itemcost": 24298.755,
+							"itemprice": 56517.637875288914
+						},
+						{
+							"item": "Other EG",
+							"quantity": "1",
+							"description": "Pads, Rigging, Onsite Install",
+							"cost": 8625.0,
+							"dpe": 1186.44,
+							"burden": 1766.06,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 219.43,
+							"itemcost": 11796.93,
+							"itemprice": 27439.039767463655
+						},
+						{
+							"item": "Other EG",
+							"quantity": "1",
+							"description": "Pads, Rigging, Onsite Install",
+							"cost": 8625.0,
+							"dpe": 1186.44,
+							"burden": 1766.06,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 219.43,
+							"itemcost": 11796.93,
+							"itemprice": 27439.039767463655
+						},
+						{
+							"item": "MV Switchgear",
+							"quantity": 1.0,
+							"description": "Pads, Rigging, Onsite Install",
+							"cost": 20851.85185185185,
+							"dpe": 14711.016949152543,
+							"burden": 4058.4180790960456,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 356.54,
+							"itemcost": 26961.73,
+							"itemprice": 62711.57197471227
+						},
+						{
+							"item": "MV Switchgear",
+							"quantity": 1.0,
+							"description": "Pads, Rigging, Onsite Install",
+							"cost": 5250.0,
+							"dpe": 10511.016949152543,
+							"burden": 1448.3898305084748,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 171.32,
+							"itemcost": 9495.0,
+							"itemprice": 22575.339687687603
+						},
+						{
+							"item": "PEC",
+							"quantity": "1",
+							"description": "Controls Cabinet with Versamax, Installed in PEC, Onsite Install, Pads, Rigging",
+							"cost": 100.0,
+							"dpe": 1694.915254237288,
+							"burden": 471.67896,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 766.39096,
+							"itemprice": 1782.585434857679
+						},
+						{
+							"item": "Transformer",
+							"quantity": "1",
+							"description": "QLVS1: Pads, Rigging, Onsite Install",
+							"cost": 3150.0,
+							"dpe": 2796.6101694915257,
+							"burden": 811.07,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 10.94,
+							"itemcost": 5327.94,
+							"itemprice": 11500.236476874768
+						},
+						{
+							"item": "Other Equipment",
+							"quantity": "1",
+							"description": "some stuff",
+							"cost": 0.0,
+							"dpe": 194.712,
+							"burden": 0.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 0.0,
+							"itemprice": 0.0
+						},
+						{
+							"item": "Other Equipment",
+							"quantity": 1.0,
+							"description": "Onsite Installer: Additional labor: (1 persons, 4 days, 0 hours: 32 totalhours) ",
+							"cost": 0.0,
+							"dpe": 1355.93,
+							"burden": 244.0677966101695,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 1600.0,
+							"itemprice": 3721.5166209323158
+						},
+						{
+							"item": "Other Equipment",
+							"quantity": 0.0,
+							"description": "Purchased ATS: PATS1: Pads, Rigging, Onsite Install",
+							"cost": 1900.0,
+							"dpe": 0.0,
+							"burden": 494.54237288135598,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 10.94,
+							"itemcost": 3252.94,
+							"itemprice": 4934.549615420983
+						},
+						{
+							"item": "Other Equipment",
+							"quantity": 0.0,
+							"description": "MV Feeder: MV AL - In Existing PVC Conduit from a1 to b1, 400A, 10', Concrete-encased (10)",
+							"cost": 10967.433633777688,
+							"dpe": 1355.9322033898305,
+							"burden": 2778.95,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 799.53,
+							"itemcost": 19017.0975997601,
+							"itemprice": 43581.89853743465
+						},
+						{
+							"item": "Other Equipment",
+							"quantity": 1.0,
+							"description": "Temporary Power",
+							"cost": 21541.67,
+							"dpe": 847.457627118644,
+							"burden": 3877.5,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 1570.39,
+							"itemcost": 26989.55,
+							"itemprice": 61497.876085075506
+						},
+						{
+							"item": "Installation",
+							"quantity": "1",
+							"description": "Temporary Power",
+							"cost": 1295.678,
+							"dpe": 4471.19,
+							"burden": 1014.63,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 94.4549262,
+							"itemcost": 6745.9149662,
+							"itemprice": 7137.081545588069
+						},
+						{
+							"item": "Installation",
+							"quantity": 1.0,
+							"description": "Fuel Fill-up: 1000 gallons @ $2.50/gal",
+							"cost": 432.0,
+							"dpe": 0.0,
+							"burden": 176.61,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 31.49,
+							"itemcost": 1157.76,
+							"itemprice": 15613.752636178426
+						},
+						{
+							"item": "Installation",
+							"quantity": 1.0,
+							"description": "Controls Conduits Spare: Controls Conduit (PVC), 10' from a1 to b1 (10)",
+							"cost": 1000.0,
+							"dpe": 0.0,
+							"burden": 408.81,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 72.9,
+							"itemcost": 2680.0,
+							"itemprice": 2740.49925422779
+						},
+						{
+							"item": "Installation",
+							"description": "NGP: 250kW 0.75-in from a1 to c1, 10' (1)",
+							"cost": 2443.98,
+							"dpe": 0.0,
+							"burden": 896.3,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 187.24,
+							"itemcost": 6053.88,
+							"itemprice": 6343.760032634207
+						},
+						{
+							"item": "Installation",
+							"description": "HP: House Power (PVC) from a1 to b1, 10' (10)",
+							"cost": 0.0,
+							"dpe": 0.0,
+							"burden": 0.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 877.35,
+							"itemcost": 0.0,
+							"itemprice": 13935.958638509475
+						},
+						{
+							"item": "Installation",
+							"description": "Site Work: 8' Chain-link Fence (10'), 3' Asphalt Cutting/Patching (10'), 6' Asphalt Cutting/Patching (10'), 3' Concrete Cutting/Patching (10'), 6' Concrete Cutting/Patching (10'), Civil Site Work Quote (10000), Bollards (10), Manholes (1)",
+							"cost": 22035.0,
+							"dpe": 4341.15,
+							"burden": 2603.59,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 30270.32,
+							"itemprice": 0.0
+						},
+						{
+							"item": "Installation",
+							"description": "Load Banking: 480 V, Resistive, 250 KVA",
+							"cost": 0.0,
+							"dpe": 0.0,
+							"burden": 0.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 174.96,
+							"itemcost": 0.0,
+							"itemprice": 68406.12157364245
+						},
+						{
+							"item": "Installation",
+							"description": "Other Items: something else (1)",
+							"cost": 2400.0,
+							"dpe": 549.15,
+							"burden": 432.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 7.29,
+							"itemcost": 3006.96,
+							"itemprice": 0.0
+						},
+						{
+							"item": "Installation",
+							"description": "Field Project Manager",
+							"cost": 0.0,
+							"dpe": 1271.19,
+							"burden": 18.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 118.0,
+							"itemprice": 6851.595864778743
+						},
+						{
+							"item": "Installation",
+							"description": "Construction Manager Standard Time",
+							"cost": 0.0,
+							"dpe": 2535.44,
+							"burden": 0.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 0.0,
+							"itemprice": 234.0217578376086
+						},
+						{
+							"item": "Installation",
+							"description": "Construction Manager Overtime",
+							"cost": 0.0,
+							"dpe": 0.0,
+							"burden": 0.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 0.0,
+							"itemprice": 0.0
+						},
+						{
+							"item": "Installation",
+							"description": "4-Man Crew Overtime",
+							"cost": 0.0,
+							"dpe": 2429.38,
+							"burden": 0.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 0.0,
+							"itemprice": 0.0
+						},
+						{
+							"item": "Installation",
+							"description": "4-Man Crew Standard Time",
+							"cost": 0.0,
+							"dpe": 0.0,
+							"burden": 0.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 2950.0,
+							"itemprice": 0.0
+						},
+						{
+							"item": "Installation",
+							"description": "Senior Project Manager",
+							"cost": 2500.0,
+							"dpe": 0.0,
+							"burden": 222.74028,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 13263.2,
+							"itemprice": 6861.546269843963
+						},
+						{
+							"item": "Installation",
+							"description": "Air Permitting",
+							"cost": 11240.0,
+							"dpe": 0.0,
+							"burden": 995.81708502,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 15812.0,
+							"itemprice": 30849.512029218484
+						},
+						{
+							"item": "Installation",
+							"description": "Factory Witness Testing",
+							"cost": 13400.0,
+							"dpe": 0.0,
+							"burden": 2023.2,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 24732.8,
+							"itemprice": 36777.88800636356
+						},
+						{
+							"item": "Installation",
+							"description": "Factory Witness Testing",
+							"cost": 20960.0,
+							"dpe": 0.0,
+							"burden": 2412.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 11800.0,
+							"itemprice": 57527.20392637171
+						},
+						{
+							"item": "Installation",
+							"description": "Factory Witness Testing",
+							"cost": 0.0,
+							"dpe": 0.0,
+							"burden": 3772.8,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemcost": 0.0,
+							"itemprice": 27446.185079375915
+						},
+						{
+							"item": "Installation",
+							"description": "Outside Consultant",
+							"cost": 0.0,
+							"dpe": 0.0,
+							"burden": 1800.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 0.0,
+							"itemprice": 0.0
+						}
+					]
+				},
+				{
+					"variableName": "PME",
+					"tableItems": [
+						{
+							"item": "Project Management & Engineering",
+							"description": "Freight",
+							"dpe": 100.0,
+							"tax": 0.0
+						},
+						{
+							"item": "Project Management & Engineering",
+							"description": "Commissioning",
+							"dpe": 200.0,
+							"tax": 0.0
+						},
+						{
+							"item": "Project Management & Engineering",
+							"description": "Commissioning",
+							"dpe": 300.0,
+							"tax": 0.0
+						},
+						{
+							"item": "Project Management & Engineering",
+							"description": "Start-up",
+							"dpe": 400.0,
+							"tax": 0.0
+						},
+						{
+							"item": "Project Management & Engineering",
+							"description": "Start-up",
+							"dpe": 500.0,
+							"tax": 0.0
+						}
+					]
+				},
+				{
+					"variableName": "other",
+					"tableItems": [
+						{
+							"item": "Permitting",
+							"description": "Scooter permit",
+							"cost": 500.36,
+							"dpe": 20.12,
+							"burden": 50.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 30.89,
+							"itemprice": 1000.57
+						},
+						{
+							"item": "Factory Witness Testing",
+							"description": "Test Flux Capacitor",
+							"cost": 1200.36,
+							"dpe": 3045.12,
+							"burden": 1800.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 350.89,
+							"itemprice": 2400.57
+						},
+						{
+							"item": "Factory Witness Testing",
+							"description": "Test Dilithium chamber for leaks",
+							"cost": 1200.36,
+							"dpe": 3045.12,
+							"burden": 1800.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 350.89,
+							"itemprice": 2400.57
+						},
+						{
+							"item": "Factory Witness Testing",
+							"description": "Test megamaid vacuum switch has not been changed to blow",
+							"cost": 1200.36,
+							"dpe": 3045.12,
+							"burden": 1800.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 350.89,
+							"itemprice": 2400.57
+						},
+						{
+							"item": "Outside Consultant",
+							"description": "Fee for the Bob's",
+							"cost": 5000.36,
+							"dpe": 4574.12,
+							"burden": 1000.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 230.89,
+							"itemprice": 10000.57
+						},
+						{
+							"item": "Freight",
+							"description": "Delivery via Hogwarts Express",
+							"cost": 4500.36,
+							"dpe": 1000.12,
+							"burden": 1400.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 560.89,
+							"itemprice": 9000.57
+						},
+						{
+							"item": "Commissioning",
+							"description": "Painting of the Big Cheese",
+							"cost": 5200.36,
+							"dpe": 4045.12,
+							"burden": 1800.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 150.89,
+							"itemprice": 8400.57
+						},
+						{
+							"item": "Commissioning",
+							"description": "Sculpture for the lobby commemorating project success",
+							"cost": 2200.36,
+							"dpe": 45.12,
+							"burden": 800.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 450.89,
+							"itemprice": 6400.57
+						},
+						{
+							"item": "Start-up",
+							"description": "Herding cats into final places",
+							"cost": 6200.36,
+							"dpe": 945.12,
+							"burden": 2000.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 750.89,
+							"itemprice": 7400.57
+						},
+						{
+							"item": "Start-up",
+							"description": "Turning the key",
+							"cost": 200.36,
+							"dpe": 35.12,
+							"burden": 400.0,
+							"materialBurdon": 1000.0,
+							"laborBurdon": 1000.0,
+							"tax": 150.89,
+							"itemprice": 400.57
+						},
+						{
+							"item": "Warranty",
+							"description": "5-Year Warranty: PowerBlock",
+							"cost": 0.0,
+							"dpe": 0.0,
+							"burden": 0.0,
+							"itemcost": 26434.70993137534,
+							"itemprice": 10280.164973312632
+						},
+						{
+							"item": "Warranty",
+							"description": "5-Year Warranty: PowerBlock",
+							"cost": 0.0,
+							"dpe": 0.0,
+							"burden": 0.0,
+							"itemcost": 26434.70993137534,
+							"itemprice": 10280.164973312632
+						},
+						{
+							"item": "Warranty",
+							"description": "6-to-10-Year Warranty: PowerBlock",
+							"cost": 0.0,
+							"dpe": 0.0,
+							"burden": 0.0,
+							"itemcost": 26434.70993137534,
+							"itemprice": 26434.70993137534
+						},
+						{
+							"item": "Warranty",
+							"description": "6-to-10-Year Warranty: PowerBlock",
+							"cost": 0.0,
+							"dpe": 0.0,
+							"burden": 0.0,
+							"itemcost": 26434.70993137534,
+							"itemprice": 26434.70993137534
+						},
+						{
+							"item": "Alliance",
+							"description": "Alliance Fees (5.00%)",
+							"cost": 0.0,
+							"burden": 0.0,
+							"itemcost": 113506.01,
+							"itemprice": 113506.01
+						},
+						{
+							"item": "Contingency",
+							"description": "Contingency (5.00%)",
+							"cost": 0.0,
+							"burden": 0.0,
+							"itemcost": 89132.096,
+							"itemprice": 89132.096
+						}
+					]
+				},
+				{
+					"variableName": "equipmentHours",
+					"tableItems": [
+						{
+							"item": "PowerBlock",
+							"nexgear": 210.0,
+							"powerfab": 1064.0,
+							"qc": 24.0,
+							"test": 24.0,
+							"packaging": 24.0,
+							"install": 0.0,
+							"engineering": 10.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Other EG",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Other EG",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "MV Switchgear",
+							"nexgear": 601.0,
+							"powerfab": 0.0,
+							"qc": 32.0,
+							"test": 32.0,
+							"packaging": 8.0,
+							"install": 0.0,
+							"engineering": 48.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "MV Switchgear",
+							"nexgear": 361.0,
+							"powerfab": 0.0,
+							"qc": 32.0,
+							"test": 32.0,
+							"packaging": 8.0,
+							"install": 0.0,
+							"engineering": 48.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "PEC",
+							"nexgear": 0.0,
+							"powerfab": 367.01587264572597,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 24.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Transformer",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Other Equipment",
+							"nexgear": 10.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Other Equipment",
+							"nexgear": 8.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Other Equipment",
+							"nexgear": 0.0,
+							"powerfab": 88.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Other Equipment",
+							"nexgear": 100.0,
+							"powerfab": 0.0,
+							"qc": 24.0,
+							"test": 24.0,
+							"packaging": 8.0,
+							"install": 0.0,
+							"engineering": 24.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Other Equipment",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Other Equipment",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						}
+					]
+				},
+				{
+					"variableName": "installationHours",
+					"tableItems": [
+						{
+							"item": "PowerBlock",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 82.25,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Other EG",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.25,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Other EG",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.25,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "MV Switchgear",
+							"nexgear": 10.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 36.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "MV Switchgear",
+							"nexgear": 10.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 36.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "PEC",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 40.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Transformer",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 66.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "RAP: 1-RAP",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Monitoring Box",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Controls Cabinet with Versamax, Installed in PEC, Onsite Install, Pads, Rigging",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "QLVS1: 1000A, Switchgear, 4 section(s), , NEMA 3R, 100 NexGear hour(s)",
+							"nexgear": 0.0,
+							"powerfab": 8.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 32.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "some stuff",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Labor Hours: ",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 32.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Purchased ATS: PATS1: 800A, 3-Pole, Open, Isolation Bypass",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 20.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 105.52,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 102.4512,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 12.96,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 30.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 59.8364,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 57.33,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						}
+					]
+				},
+				{
+					"variableName": "laborHours",
+					"tableItems": [
+						{
+							"item": "Field Project Manager",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Construction Manager Standard Time",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 182.80793333333333,
+							"engineering": 0.0,
+							"pm": 0.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Construction Manager Overtime",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 29.701983333333336,
+							"engineering": 0.0,
+							"pm": 21.0,
+							"epcengineering": 0.0
+						},
+						{
+							"item": "Senior Project Manager",
+							"nexgear": 0.0,
+							"powerfab": 0.0,
+							"qc": 0.0,
+							"test": 0.0,
+							"packaging": 0.0,
+							"install": 0.0,
+							"epcengineering": 0.0
+						}
+					]
+				},
+				{
+					"variableName": "maintenanceandmonitoring",
+					"tableItems": []
+				}
+			],
+			"estimateId": "af24bba3-3008-4fa0-a6d1-9207f55aefc6",
+			"boliNumber": "1",
+			"boliid": "952dd8d2-6298-463e-b243-9a4ac7e2c922"
+		}
+	]
+}
