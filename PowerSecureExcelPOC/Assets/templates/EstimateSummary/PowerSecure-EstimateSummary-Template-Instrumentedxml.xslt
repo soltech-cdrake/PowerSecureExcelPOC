@@ -4,11 +4,13 @@ xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="#default"
 xmlns:html="http://www.w3.org/TR/REC-html40"
 xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
 >
+  <xsl:param name="current-date"/>
   <xsl:output method="xml" indent="no"/>
   <xsl:strip-space elements="*"/>
   <xsl:key name = "summary" match="Items/summaryTable" use="variableName"/>
   <!--Sheet 1 Summary KVP's-->
   <xsl:template name="AddSummarySheetData" xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3">
+    <xsl:param name="current-date"/>
     <row r="5" spans="1:6" ht="15.75">
       <c r="A5" s="1" t="s">
         <v>0</v>
@@ -21,8 +23,8 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       <c r="E5" s="3" t="s">
         <v>2</v>
       </c>
-      <c r="F5" s="4" t="s">
-        <v>3</v>
+      <c r="F5" s="4" t="str">
+        <v><xsl:value-of  select="$current-date"/></v>
       </c>
     </row>
     <row r="6" spans="1:6">
@@ -37,8 +39,8 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       <c r="E6" s="6" t="s">
         <v>1</v>
       </c>
-      <c r="F6" s="7" t="s">
-        <v>1</v>
+      <c r="F6" s="7" t="str">
+        <v><xsl:value-of select="Items/boName"/></v>
       </c>
     </row>
     <row r="7" spans="1:6">
@@ -49,8 +51,10 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       <c r="C7" s="9" />
       <c r="D7" s="9" />
       <c r="E7" s="9" />
-      <c r="F7" s="10" t="s">
-        <v>1</v>
+      <c r="F7" s="10" t="inlineStr">
+        <is>
+          <t><xsl:value-of select='format-number(Items/boNumber, "0000")'/></t>
+        </is>
       </c>
     </row>
     <row r="8" spans="1:6">
@@ -340,6 +344,7 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
   </xsl:template>
   <!--Sheet 2 Financial Detail Tables-->
   <xsl:template name="AddFinancialDetailSheetData" xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3">
+    <xsl:param name="current-date"/>
     <row r="5" spans="1:9" ht="15.75">
       <c r="A5" s="1" t="s">
         <v>37</v>
@@ -355,8 +360,8 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       <c r="H5" s="3" t="s">
         <v>2</v>
       </c>
-      <c r="I5" s="4" t="s">
-        <v>3</v>
+      <c r="I5" s="4" t="str">
+        <v><xsl:value-of  select="$current-date"/></v>
       </c>
     </row>
     <row r="6" spans="1:9">
@@ -374,8 +379,8 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       <c r="F6" s="6" />
       <c r="G6" s="6" />
       <c r="H6" s="6" />
-      <c r="I6" s="7" t="s">
-        <v>1</v>
+      <c r="I6" s="7" t="str">
+        <v><xsl:value-of select="Items/boName"/></v>
       </c>
     </row>
     <row r="7" spans="1:9">
@@ -389,8 +394,8 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       <c r="F7" s="9" />
       <c r="G7" s="9" />
       <c r="H7" s="9" />
-      <c r="I7" s="10" t="s">
-        <v>1</v>
+      <c r="I7" s="10" t="str">
+        <v><xsl:value-of select='format-number(Items/boNumber, "0000")'/></v>
       </c>
     </row>
     <row r="8" spans="1:9">
@@ -484,17 +489,22 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       <xsl:with-param name = "headerI" select="$headerI"/>
     </xsl:call-template>
     <xsl:for-each select = "tableItems">
-      <xsl:call-template name="AddFinancialDetailTableItem">
-        <xsl:with-param name="rowCount" select="(position()-1) + $insertIndex"/>
-      </xsl:call-template>
+      <xsl:if test="not(item = 'Total')">
+        <xsl:call-template name="AddFinancialDetailTableItem">
+          <xsl:with-param name="rowCount" select="(position()-1) + $insertIndex"/>
+        </xsl:call-template>
+      </xsl:if>
     </xsl:for-each>
     <!--Add totals summary line-->
+    <!--Variable to hold the number of rows with the name "Total" this is to remove the redundant entry since 
+    total are already given their own line item in the xlsx reports-->
+    <xsl:variable name="totalLineItemsCount" select="count(tableItems[item = 'Total'])"/>
     <xsl:call-template name="AddFinancialDetailTotals">
-      <xsl:with-param name = "rowCount" select="count(tableItems) + $insertIndex"/>
+      <xsl:with-param name = "rowCount" select="count(tableItems) + $insertIndex - $totalLineItemsCount"/>
     </xsl:call-template>
     <xsl:if test="not(variableName = 'other')">
       <xsl:call-template name="AddFinancialDetailAdHocSpacer">
-          <xsl:with-param name="rowCount" select="count(tableItems) + $insertIndex + 1"/>
+          <xsl:with-param name="rowCount" select="count(tableItems) + $insertIndex + 1 - $totalLineItemsCount"/>
       </xsl:call-template>
     </xsl:if>
   </xsl:template>
@@ -577,16 +587,16 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
     <xsl:param name="rowCount" select="0"/>
     <xsl:variable name="insertIndex" select="$rowCount + 1"/>
     <row r="{$insertIndex}" spans="1:4">
-      <c r="A{$insertIndex}" s="14">
+      <c r="A{$insertIndex}" s="14" t="inlineStr">
         <is><t><xsl:value-of select="item"/></t></is>
       </c>
       <c r="B{$insertIndex}" s="15">
         <v><xsl:value-of select="quantity"/></v>
       </c>
-      <c r="C{$insertIndex}" s="15">
+      <c r="C{$insertIndex}" s="15" t="inlineStr">
         <is><t><xsl:value-of select="description"/></t></is>
       </c>
-      <c r="D{$insertIndex}" s="15">
+      <c r="D{$insertIndex}" s="16">
         <v>
           <xsl:choose>
             <xsl:when test="cost and materialBurdon">
@@ -605,7 +615,7 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
           </xsl:choose>
         </v>
       </c>
-      <c r="E{$insertIndex}" s="15">
+      <c r="E{$insertIndex}" s="16">
         <v>
           <xsl:choose>
             <xsl:when test="laborBurdon">
@@ -630,17 +640,17 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
           </xsl:choose>
         </v>
       </c>
-      <c r="F{$insertIndex}" s="15">
+      <c r="F{$insertIndex}" s="16">
         <v>
           <xsl:value-of select="burden"/>
         </v>
       </c>
-      <c r="G{$insertIndex}" s="15">
+      <c r="G{$insertIndex}" s="16">
         <v>
           <xsl:value-of select="tax"/>
         </v>
       </c>
-      <c r="H{$insertIndex}" s="15">
+      <c r="H{$insertIndex}" s="16">
         <v>
           <xsl:value-of select="itemcost"/>
         </v>
@@ -654,14 +664,16 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
   </xsl:template>
   <xsl:template name="AddFinancialDetailTotals" xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3">
     <xsl:param name="rowCount" select="0"/>
+    <!--Only include tableItems if they are not those called "Total"-->
+    <xsl:variable name="lineItemsWithoutTotal" select="tableItems[item != 'Total']"/>
     <xsl:variable name="insertIndex" select="$rowCount + 1"/>
-    <xsl:variable name="sumMaterial" select = "sum(tableItems/cost)+sum(tableItems/materialBurdon)"/>
-    <xsl:variable name="sumRawLabor" select = "sum(tableItems/raw)+sum(tableItems/laborBurdon)"/>
-    <xsl:variable name="sumDpeLabor" select = "sum(tableItems/dpe)+sum(tableItems/laborBurdon)"/>
-    <xsl:variable name="sumBurden" select = "sum(tableItems/burden)"/>
-    <xsl:variable name="sumTax" select = "sum(tableItems/tax)"/>
-    <xsl:variable name="sumItemCost" select = "sum(tableItems/itemcost)"/>
-    <xsl:variable name="sumItemPrice" select = "sum(tableItems/itemprice)"/>
+    <xsl:variable name="sumMaterial" select = "sum($lineItemsWithoutTotal/cost)+sum($lineItemsWithoutTotal/materialBurdon)"/>
+    <xsl:variable name="sumRawLabor" select = "sum($lineItemsWithoutTotal/raw)+sum($lineItemsWithoutTotal/laborBurdon)"/>
+    <xsl:variable name="sumDpeLabor" select = "sum($lineItemsWithoutTotal/dpe)+sum($lineItemsWithoutTotal/laborBurdon)"/>
+    <xsl:variable name="sumBurden" select = "sum($lineItemsWithoutTotal/burden)"/>
+    <xsl:variable name="sumTax" select = "sum($lineItemsWithoutTotal/tax)"/>
+    <xsl:variable name="sumItemCost" select = "sum($lineItemsWithoutTotal/itemcost)"/>
+    <xsl:variable name="sumItemPrice" select = "sum($lineItemsWithoutTotal/itemprice)"/>
     <xsl:variable name="sumLabor">
       <xsl:choose>
         <xsl:when test="variableName='equipment'">
@@ -744,6 +756,7 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
   </xsl:template>
   <!--Sheet 3 Hours Details Tables-->
   <xsl:template name="AddHoursDetailSheetData" xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac" xmlns:xr="http://schemas.microsoft.com/office/spreadsheetml/2014/revision" xmlns:xr2="http://schemas.microsoft.com/office/spreadsheetml/2015/revision2" xmlns:xr3="http://schemas.microsoft.com/office/spreadsheetml/2016/revision3">
+    <xsl:param name="current-date"/>
     <row r="5" spans="1:12" ht="15.75">
       <c r="A5" s="1" t="s">
         <v>52</v>
@@ -762,8 +775,8 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       <c r="K5" s="3" t="s">
         <v>2</v>
       </c>
-      <c r="L5" s="4" t="s">
-        <v>3</v>
+      <c r="L5" s="4" t="str">
+        <v><xsl:value-of  select="$current-date"/></v>
       </c>
     </row>
     <row r="6" spans="1:12">
@@ -784,8 +797,8 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       <c r="I6" s="6" />
       <c r="J6" s="6" />
       <c r="K6" s="6" />
-      <c r="L6" s="7" t="s">
-        <v>1</v>
+      <c r="L6" s="7" t="str">
+        <v><xsl:value-of select="Items/boName"/></v>
       </c>
     </row>
     <row r="7" spans="1:12">
@@ -802,8 +815,8 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
       <c r="I7" s="9" />
       <c r="J7" s="9" />
       <c r="K7" s="9" />
-      <c r="L7" s="10" t="s">
-        <v>1</v>
+      <c r="L7" s="10" t="str">
+        <v><xsl:value-of select='format-number(Items/boNumber, "0000")'/></v>
       </c>
     </row>
     <row r="8" spans="1:12">
@@ -1028,13 +1041,13 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
     <xsl:param name="rowCount" select="0"/>
     <xsl:variable name="insertIndex" select="$rowCount + 1"/>
     <row r="{$insertIndex}" spans="1:4">
-      <c r="A{$insertIndex}" s="14">
+      <c r="A{$insertIndex}" s="14" t="inlineStr">
         <is><t><xsl:value-of select="item"/></t></is>
       </c>
       <c r="B{$insertIndex}" s="15">
         <v><xsl:value-of select="quantity"/></v>
       </c>
-      <c r="C{$insertIndex}" s="15">
+      <c r="C{$insertIndex}" s="15" t="inlineStr">
         <is><t><xsl:value-of select="description"/></t></is>
       </c>
       <c r="D{$insertIndex}" s="45">
@@ -2325,7 +2338,9 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
               <col min="1" max="6" width="25.7109375" customWidth="1" />
             </cols>
             <sheetData>
-                <xsl:call-template name="AddSummarySheetData"/>
+                <xsl:call-template name="AddSummarySheetData">
+                  <xsl:with-param name = "current-date" select="$current-date"/>
+                </xsl:call-template>
             </sheetData>
             <pageMargins left="0.7" right="0.7" top="0.75" bottom="0.75" header="0.3" footer="0.3" />
             <drawing r:id="rId1" />
@@ -2349,7 +2364,9 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
               <col min="4" max="9" width="20.7109375" customWidth="1" />
             </cols>
             <sheetData>
-                <xsl:call-template name="AddFinancialDetailSheetData"/>
+                <xsl:call-template name="AddFinancialDetailSheetData">
+                  <xsl:with-param name = "current-date" select="$current-date"/>
+                </xsl:call-template>
             </sheetData>
             <pageMargins left="0.7" right="0.7" top="0.75" bottom="0.75" header="0.3" footer="0.3" />
             <drawing r:id="rId1" />
@@ -2373,7 +2390,9 @@ xmlns="http://www.soltech.net/PowerSecureOwnedAsset"
               <col min="4" max="12" width="20.7109375" customWidth="1" />
             </cols>
             <sheetData>
-                <xsl:call-template name="AddHoursDetailSheetData"/>
+                <xsl:call-template name="AddHoursDetailSheetData">
+                  <xsl:with-param name = "current-date" select="$current-date"/>
+                </xsl:call-template>
               <!-- 
               <row r="9" spans="1:12">
                 <c r="A9" s="11" t="s">

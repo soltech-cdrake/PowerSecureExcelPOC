@@ -129,7 +129,9 @@ namespace PowerSecurePDFPOC
             //Transform the xml data into Open XML 2.0 SpreadSheet format FROM XML FILE.
             //transform.Transform(xmlDataFile, xmlWriter);
             //Transform the xml data into Open XML 2.0 SpreadSheet format FROM XML parsed from input JSON file.
-            transform.Transform(inputDocReader, xmlWriter);
+            var argList = new XsltArgumentList();
+            argList.AddParam("current-date", "", String.Format("{0}/{1}/{2}", DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Year));
+            transform.Transform(inputDocReader, argList, xmlWriter);
             inputDocReader.Close();
 
             echo($"Create an Xml Document of the new content...", pause);

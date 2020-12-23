@@ -343,6 +343,18 @@
 							"tax": 583.2,
 							"itemcost": 8583.2,
 							"itemprice": 17102.532004719917
+						},
+						{
+							"item": "Total",
+							"description": "This is the total line",
+							"cost": 1000000.0,
+							"raw": 1000000.0,
+							"burden": 1000000.0,
+							"materialBurdon": 1000000.0,
+							"laborBurdon": 1000000.0,
+							"tax": 1000000.0,
+							"itemcost": 1000000.0,
+							"itemprice": 1000000.0
 						}
 					]
 				},
@@ -734,6 +746,17 @@
 							"laborBurdon": 1000.0,
 							"tax": 0.0,
 							"itemprice": 0.0
+						},
+						{
+							"item": "Total",
+							"description": "This is the total line",
+							"cost": 1000000.0,
+							"dpe": 1000000.0,
+							"burden": 1000000.0,
+							"materialBurdon": 1000000.0,
+							"laborBurdon": 1000000.0,
+							"tax": 1000000.0,
+							"itemprice": 1000000.0
 						}
 					]
 				},
@@ -936,6 +959,15 @@
 							"burden": 0.0,
 							"itemcost": 89132.096,
 							"itemprice": 89132.096
+						}
+						,
+						{
+							"item": "Total",
+							"description": "This is the total line",
+							"cost": 1000000.0,
+							"burden": 1000000.0,
+							"itemcost": 1000000.0,
+							"itemprice": 1000000.0
 						}
 					]
 				},
@@ -1559,7 +1591,9 @@
 			],
 			"estimateId": "af24bba3-3008-4fa0-a6d1-9207f55aefc6",
 			"boliNumber": "1",
-			"boliid": "952dd8d2-6298-463e-b243-9a4ac7e2c922"
+			"boliid": "952dd8d2-6298-463e-b243-9a4ac7e2c922",
+			"boName": "THISISTHEBONAME",
+			"boNumber": "0006"
 		}
 	]
 }
